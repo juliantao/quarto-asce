@@ -4,7 +4,7 @@ version: 0.1.0
 contributes:
   format:
     common:
-      csl: asce.csl
+      csl: "assets/asce.csl"
       execute:
         echo: false
         warning: false
@@ -25,7 +25,9 @@ contributes:
         - "partials/doc-class.tex"
         - "partials/title.tex"
         - "partials/before-body.tex"
-        - "partials/ascelike-new.cls"
-        - "partials/ascelike-new.bst"
+      format-resources:
+        - "assets/ascelike-new.cls"
+        - "assets/ascelike-new.bst"
+
     html:
       toc: true
