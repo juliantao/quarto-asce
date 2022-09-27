@@ -1,0 +1,714 @@
+---
+title: Template for Preparing Your Submission to the American Society Of Civil Engineers (ASCE) 
+author:
+  - name: Author One, S.M. ASCE
+    affiliations: Graduate Research Associate, First affiliation address
+    email: author.one@email.com
+  - name: Author Two, M. ASCE
+    affiliations: Assistant Professor, Second affiliation address
+    email: author.two@email.com
+  - name: Author three, A.M. ASCE
+    affiliations: Associate Professor, Third affiliation address
+    email: author.three@email.com
+    corresponding: true
+abstract: |
+  The abstract should be a single paragraph (150-175 words long) written
+  in plain language and include a summary of the key conclusions of the
+  manuscript. It should clearly state the purpose of the work, the scope
+  of the effort, the procedures used to execute the work, and major
+  findings. The abstract is the second most important online search
+  discovery element, after the title. Authors should review the abstract
+  to ensure that it accurately reflects the revised paper and should
+  strive to include any applicable keywords that would likely be used
+  during an online search. Mathematics and references are not permitted
+  in the abstract and will be removed by the copyeditors.
+keywords: template, quarto, asce
+bibliography: references.bib
+format: 
+  asce-pdf:
+    keep-tex: true
+    publication-type: NewProceedings
+    footer-lastname: Author1
+    classoption: [InsideFigs, LineNumbers]
+---
+
+# Introduction
+
+This template and class file "`ascelike-new.cls`" produce manuscripts
+that comply with the guidelines of the American Society of Civil
+Engineers (ASCE). It has been produced by
+[Overleaf](https://www.overleaf.com) in conjunction with the ASCE, and
+is based on the unofficial "`ascelike.cls`" developed by Matthew
+R. Kuhn.
+
+This template provides guidance on how to prepare your manuscript
+according to the ASCE requirements, including details on how to use
+various LaTeX commands to achieve the appropriate formatting. Additional
+template options are given in Appendix [-@sec-app-options]. If you
+have any questions about this template, or need help with LaTeX, please
+[contact Overleaf](https://www.overleaf.com/contact) who can provide
+assistance as required.
+
+Once your work is complete, please use the "Submit to ASCE" option in
+Overleaf to select the appropriate journal for your manuscript and
+follow the instructions to complete your submission.
+
+For more information on the ASCE, and to access additional resources for
+authors, please visit the [ASCE Library
+website](http://ascelibrary.org/page/authors).
+
+# Preparing Your Manuscript
+
+## Length
+
+For most ASCE journals, the maximum length for technical papers and case
+studies is 30 double-spaced manuscript pages including references,
+figures, tables, and captions; 7 double-spaced manuscript pages for
+technical notes; and 4 double-spaced manuscript pages for discussions
+and closures. The editor may waive these restrictions to encourage
+manuscripts on topics that cannot be treated within these limitations.
+See the ["Publishing in ASCE Journals: A Guide for
+Authors"](https://ascelibrary.org/doi/pdf/10.1061/9780784479018) for
+information on other article types.
+
+## General Flow of the Paper
+
+Sections of the article should not be numbered and use word headings
+only. Article sections should appear in the following order:
+
+-   Title page content (includes title, author byline & affiliation,
+    abstract)
+
+-   Introduction
+
+-   Main text sections
+
+-   Conclusion
+
+-   Appendix(es)
+
+-   Data Availability Statement
+
+-   Acknowledgments
+
+-   Disclaimers
+
+-   Notation list
+
+-   Supplemental Materials
+
+-   References
+
+## Title
+
+Titles should be no longer than 100 characters including spaces. The
+title of a paper is the first "description" of a paper found via search
+engine. Authors should take care to ensure that the title is specific
+and accurately reflects the final, post-peer reviewed version of the
+paper. Authors should try to include relevant search terms in the title
+of the paper to maximize discoverability online. Titles should not begin
+with "A," "An," "The," "Analysis of," "Theory of," "On the," "Toward,"
+etc.
+
+## Author Bylines
+
+Under the title of the manuscript, the full name of each author and his
+or her affiliation and professional designation, if applicable, must be
+included. The following academic and professional designations are
+currently acceptable for all journals: Ph.D., Dr.Tech., Dr.Eng., D.Sc.,
+Sc.D., J.D., P.E., S.E., D.WRE, Hon.D.WRE, D.GE, D.CE, D.OE, D.PE, D.NE,
+NAE, DEE, P.Eng., CEng, L.S., P.L.S., G.E., P.G., P.H., RA, AICP, and
+CPEng.
+
+Former affiliations are permissible only if an author's affiliation has
+changed after a manuscript has been submitted for publication. If a
+coauthor has passed away, include the date of death in the affiliation
+line. Any manuscript submitted without a separate affiliation statement
+for each author will be returned to the corresponding author for
+correction.
+
+## Gender-specific Words
+
+Authors should avoid "he," "she," "his," "her," and "hers."
+Alternatively, words such as "author," "discusser," "engineer," and
+"researcher" should be used.
+
+## Footnotes and Endnotes
+
+Footnotes and endnotes are not permitted in the text. Authors must
+incorporate any necessary information within the text of the manuscript.
+
+**Exception** - Endnotes are only permitted for use in the *Journal of
+Legal Affairs and Dispute Resolution in Engineering and Construction*.
+
+## SI Units
+
+The use of Système Internationale (SI) units as the primary units of
+measure is mandatory. Other units of measurement may be given in
+parentheses after the SI unit if the author desires. More information
+about SI units can be found on the [NIST
+website](http://physics.nist.gov/cuu/Units/index.html).
+
+## Conclusions
+
+At the end of the manuscript text, authors must include a set of
+conclusions, or summary and conclusion, in which the significant
+implications of the information presented in the body of the text are
+reviewed. Authors are encouraged to explicitly state in the conclusions
+how the work presented contributes to the overall body of knowledge for
+the profession.
+
+## Data Availability Statement
+
+When submitting a new and revised manuscript, authors are asked to
+include a data availability statement containing one or more of the
+following statements, with specific items listed as appropriate. Please
+include one or more of the statements below, deleting those which do not
+apply. This section should appear directly before the Acknowledgments
+section.
+
+-   Some or all data, models, or code generated or used during the study
+    are available in a repository online in accordance with funder data
+    retention policies (provide full citations that include URLS or
+    DOIs)
+
+-   Some or all data, models, or code used during the study were
+    provided by a third party (list items). Direct requests for these
+    materials may be made to the provider as indicated in the
+    Acknowledgements.
+
+-   Some or all data, models, or code that support the findings of this
+    study are available from the corresponding author upon reasonable
+    request (list items).
+
+-   Some or all data, models, or code generated or used during the study
+    are proprietary or confidential in nature and may only be provided
+    with restrictions (e.g. anonymized data) (List items and
+    restrictions).
+
+-   All data, models, and code generated or used during the study appear
+    in the submitted article.
+
+-   No data, models, or code were generated or used during the study
+    (e.g., opinion or data-less paper).
+
+Please also see the guidelines at:
+<https://ascelibrary.org/page/dataavailability>.
+
+## Acknowledgments
+
+Acknowledgments are encouraged as a way to thank those who have
+contributed to the research or project but did not merit being listed as
+an author. The Acknowledgments should indicate what each person did to
+contribute to the project.
+
+Authors can include an Acknowledgments section to recognize any advisory
+or financial help received. This section should appear after the
+Conclusions and before the references. Authors are responsible for
+ensuring that funding declarations match what was provided in the
+manuscript submission system as part of the FundRef query. Discrepancies
+may result in delays in publication.
+
+## Mathematics
+
+All displayed equations should be numbered sequentially throughout the
+entire manuscript, including Appendixes. Equations should be in the body
+of a manuscript; complex equations in tables and figures are to be
+avoided, and numbered equations are never permitted in figures and
+tables. Here is an example of a displayed equation
+(@eq-Einstein)
+
+$$
+E = m c^{2}
+$$ {#eq-Einstein}
+
+Symbols should be listed alphabetically in a section called "Notation"
+at the end of the manuscript (preceding the references). See the
+folliowing section for more details.
+
+## Notation List
+
+Notation lists are optional; however, authors choosing to include one
+should follow these guidelines:
+
+-   List all items alphabetically.
+
+-   Capital letters should precede lowercase letters.
+
+-   The Greek alphabet begins after the last letter of the English
+    alphabet.
+
+-   Non-alphabetical symbols follow the Greek alphabet.
+
+Notation lists should always begin with the phrase, "*The following
+symbols are used in this paper:*"; acronyms and abbreviations are not
+permitted in the Notation list except when they are used in equations as
+variables. Definitions should end with a semicolon. An example Notation
+list has been included in this template; see Appendix [-@sec-app-notation].
+
+## Appendixes
+
+Appendixes can be used to record details and data that are of secondary
+importance or are needed to support assertions in the text. The main
+body of the text must contain references to all Appendixes. Any tables
+or figures in Appendixes should be numbered sequentially, following the
+numbering of these elements in the text. Appendixes must contain some
+text, and need to be more than just figures and/or tables. Appendixes
+containing forms or questionnaires should be submitted as Supplemental
+Materials instead.
+
+# Sections, subsections, equations, etc.
+
+This section is included to explain and to test the formatting of
+sections, subsections, subsubsections, equations, tables, and figures.
+
+Section heading are automatically made uppercase; to include mathematics
+or symbols in a section heading, you can use the `\lowercase{}` around
+the content, e.g. `\lowercase{\boldmath$c^{2}$}`.
+
+## An Example Subsection
+
+No automatic capitalization occurs with subsection headings; you will
+need to capitalize the first letter of each word, as in "An Example
+Subsection."
+
+### An example subsubsection
+
+No automatic capitalization occurs with subsubsections; you will need to
+capitalize only the first letter of subsubsection headings.
+
+# Figures and Tables
+
+This template includes two examples of figure (@fig-fill-between, @fig-asce-logo) and a table
+(@tbl-assembly). 
+@fig-fill-between is a computed figure with python. 
+It has a caption with no more information than the figure itself, a very poor practice indeed.
+A reference here [@Stahl:2004a].
+
+```{python}
+#| label: fig-fill-between
+#| fig-cap: An example figure.
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+# use SciencePlots package
+# to install the latest release (from PyPI)
+# pip install SciencePlots
+
+# to install the latest commit (from GitHub)
+# pip install git+https://github.com/garrettj403/SciencePlots
+
+# plt.style.use(['science','ieee']) 
+
+np.random.seed(1)
+x = np.linspace(0, 8, 16)
+y1 = 3 + 4*x/8 + np.random.uniform(0.0, 0.5, len(x))
+y2 = 1 + 2*x/8 + np.random.uniform(0.0, 0.5, len(x))
+
+# plot
+fig, ax = plt.subplots()
+
+ax.fill_between(x, y1, y2, alpha=.5, linewidth=0)
+ax.plot(x, (y1 + y2)/2, linewidth=2)
+
+ax.set(xlim=(0, 8), xticks=np.arange(1, 8),
+       ylim=(0, 8), yticks=np.arange(1, 8))
+
+plt.show()
+
+```
+
+@fig-asce-logo is a figure of `pdf` format.
+
+## Figure Captions
+
+Figure captions should be short and to the point; they need not include
+a complete explanation of the figure.
+
+## Figure Files
+
+Figures should be uploaded as separate files in TIFF, EPS, or PDF
+format. If using PDF format, authors must ensure that all fonts are
+embedded before submission. Every figure must have a figure number and
+be cited sequentially in the text.
+
+::: {#fig-asce-logo}
+![](./img/asce-logo.pdf)
+
+ASCE logo with signature on one line 
+:::
+
+## Color Figures
+
+Figures submitted in color will be published in color in the online
+journal at no cost. Color figures provided must be suitable for printing
+in black and white. Color figures that are ambiguous in black and white
+will be returned to the author for revision, and will delay publication.
+Authors wishing to have figures printed in color must indicate this in
+the submission questions. There is a fee for publishing color figures in
+print.
+
+## Table Format
+
+The following is a guide to preparing tables as part of your submission
+
+-   Vertical rules should not be used in tables. Horizontal rules are
+    used to offset column headings at the top of the table and footnotes
+    (if any) at the bottom of the table and to separate major sections.
+
+-   All columns must have a heading. Each table should have only one set
+    of column headings at the top of the table. Using additional column
+    headings within the body of the table should be avoided.
+
+-   Photographs, sketches, line art, or other graphic elements are not
+    permitted in tables. Any table that includes graphics must be
+    treated and numbered as a figure.
+
+-   Highlighting and shading are also not permitted and will not be
+    reproduced in print. Boldface font should be used for emphasis
+    sparingly.
+
+-   Equations are allowed in the table body, but should be avoided if
+    possible. Numbered equations are never allowed in tables.
+
+-   Tables should not be submitted in multiple parts (Table 1a, 1b,
+    etc.). Tables with multiple parts should either be combined into one
+    table or split into separate tables.
+
+
+| Assembly Attribute (1)                  | Values (2)                                 |
+|-----------------------------------------|--------------------------------------------|
+| Number of particles                     | 4008                                       |
+| Particle sizes                          | Multiple                                   |
+| Particle size range                     | $0.45D_{50}^{\:\ast}$ to $1.40D_{50}$      |
+| Initial void ratio, $e_{\mathrm{init}}$ | $0.179$                                    |
+| Assembly size                           | $54D_{50} \times 54D_{50} \times 54D_{50}$ |
+|$\ast$ $D_{50}$ represents the median particle diameter|
+
+: An example table {#tbl-assembly tbl-colwidths="[60, 40]"}
+
+
+# Figure, Table and Text Permissions
+
+Authors are responsible for obtaining permission for each figure,
+photograph, table, map, material from a Web page, or significant amount
+of text published previously or created by someone other than the
+author. Permission statements must indicate permission for use online as
+well as in print.
+
+ASCE will not publish a manuscript if any text, graphic, table, or
+photograph has unclear permission status. Authors are responsible for
+paying any fees associated with permission to publish any material. If
+the copyright holder requests a copy of the journal in which his or her
+figure is used, the corresponding author is responsible for obtaining a
+copy of the journal.
+
+
+# Supplemental Materials
+
+Supplemental Materials are considered to be data too large to be
+submitted comfortably for print publication (e.g., movie files, audio
+files, animated .gifs, 3D rendering files) as well as color figures,
+data tables, and text (e.g., Appendixes) that serve to enhance the
+article, but are not considered vital to support the science presented
+in the article. A complete understanding of the article does not depend
+upon viewing or hearing the Supplemental Materials.
+
+Supplemental Materials must be submitted for inclusion in the online
+version of any ASCE journal via Editorial Manager at the time of
+submission.
+
+Decisions about whether to include Supplemental Materials will be made
+by the relevant journal editor as part of the article acceptance
+process. Supplemental Materials files will be posted online as supplied.
+They will not be checked for accuracy, copyedited, typeset, or
+proofread. The responsibility for scientific accuracy and file
+functionality remains with the authors. A disclaimer will be displayed
+to this effect with any supplemental materials published online. ASCE
+does not provide technical support for the creation of supplemental
+materials.
+
+ASCE will only publish Supplemental Materials subject to full copyright
+clearance. This means that if the content of the file is not original to
+the author, then the author will be responsible for clearing all
+permissions prior to publication. The author will be required to provide
+written copies of permissions and details of the correct copyright
+acknowledgment. If the content of the file is original to the author,
+then it will be covered by the same Copyright Transfer Agreement as the
+rest of the article.
+
+Supplemental Materials must be briefly described in the manuscript with
+direct reference to each item, such as Figure S1, Table S1, Protocol S1,
+Audio S1, and Video S1 (numbering should always start at 1, since these
+elements will be numbered independently from those that will appear in
+the printed version of the article). Text within the supplemental
+materials must follow journal style. Links to websites other than a
+permanent public repository are not an acceptable alternative because
+they are not permanent archives.
+
+When an author submits supplemental materials along with a manuscript,
+the author must include a section entitled "Supplemental Materials"
+within the manuscript. This section should be placed immediately before
+the References section. This section should only contain a direct list
+of what is included in the supplemental materials, and where those
+materials can be found online. Descriptions of the supplemental
+materials should not be included here. An example of appropriate text
+for this section is "Figs. S1--S22 are available online in the ASCE
+Library ([ascelibrary.org](http://ascelibrary.org/))."
+
+# References, Citations and bibliographic entries
+
+ASCE uses the author-date method for in-text references, whereby the
+source reads as the last names of the authors, then the year (e.g.,
+Smith 2004 or Smith and Jones 2004). A References section must be
+included that lists all references alphabetically by last name of the
+first author.
+
+When used together, `ascelike-new.cls` and `ascelike-new.bst` produce
+citations and the References section in the correct format
+automatically.
+
+References must be published works only. Exceptions to this rule are
+theses, dissertations, and "in press" articles, all of which are allowed
+in the References list. References cited in text that are not found in
+the reference list will be deleted but queried by the copyeditor.
+Likewise, all references included in the References section must be
+cited in the text.
+
+The following citation options are available:
+
+-   `\cite{key}` produces citations with full author list and year
+    [@Ireland:1954a].
+
+-   `\citeNP{key}` produces citations with full author list and year,
+    but without enclosing parentheses: e.g. .
+
+-   `\citeA{key}` produces citations with only the full author list:
+    e.g.
+
+-   `\citeN{key}` produces citations with the full author list and year,
+    but which can be used as nouns in a sentence; no parentheses appear
+    around the author names, but only around the year: e.g. states that
+    ...
+
+-   `\citeyear{key}` produces the year information only, within
+    parentheses, as in [-@Ireland:1954a].
+
+-   `\citeyearNP{key}` produces the year information only, as in .
+
+The bibliographic data base `ascexmpl-new.bib` gives examples of
+bibliographic entries for different document types. These entries are
+from the canonical set in the ASCE web document "Instructions For
+Preparation Of Electronic Manuscripts" and from the ASCE website. The
+References section of this document has been automatically created with
+the `ascelike-new.bst` style for the following entries:
+
+-   a book [@Goossens:1994a],
+
+-   an anonymous book [@Moody:1988a],
+
+-   an anonymous report using `@MANUAL` [@FHWA:1991a],
+
+-   a journal article [@Stahl:2004a; @Pennoni:1992a],
+
+-   a journal article in press [@Dasgupta:2008a],
+
+-   an article in an edited book using `@INCOLLECTION` [@Zadeh:1981a],
+
+-   a building code using `@MANUAL` [@ICBO:1988a],
+
+-   a discussion of an `@ARTICLE` [@Vesilind:1992a],
+
+-   a masters thesis using `@MASTERSTHESIS` [@Sotiropulos:1991a],
+
+-   a doctoral thesis using `@PHDTHESIS` [@Chang:1987a],
+
+-   a paper in a foreign journal [@Ireland:1954a],
+
+-   a paper in a proceedings using `@INPROCEEDINGS`
+    [@Eshenaur:1991a; @Garrett:2003a],
+
+-   a standard using `@INCOLLECTION` [@ASTM:1991a],
+
+-   a translated book [@Melan:1913a],
+
+-   a two-part paper [@Frater:1992a; @Frater:1992b],
+
+-   a university report using `@TECHREPORT` [@Duan:1990a],
+
+-   an untitled item in the Federal Register using `@MANUAL`
+    [@FR:1968a],
+
+-   works in a foreign language [@Duvant:1972a; @Reiffenstuhl:1982a],
+
+-   software using `@MANUAL` [@Lotus:1985a],
+
+-   two works by the same author in the same year
+    [@Gaspar:2001b; @Gaspar:2001a], and
+
+-   two works by three authors in the same year that only share the
+    first two authors [@Huang2009a; @Huang2009b].
+
+ASCE has added two types of bibliographic entries: webpages and CD-ROMs.
+A webpage can be formated using the `@MISC` entry category, as with the
+item [@Burka:1993a] produced with the following `*.bib` entry:
+
+        @MISC{Burka:1993a,
+          author = {Burka, L. P.},
+          title = {A hypertext history of multi-user dimensions},
+          journal = {MUD history},
+          year = {1993},
+          month = {Dec. 5, 1994},
+          url = {http://www.ccs.neu.edu}
+        }
+
+Notice the use of the "`month`" field to give the date that material was
+downloaded and the use of a new "`url`" field. The "`url`" and `month`"
+fields can also be used with other entry types (i.e., `@BOOK`,
+`@INPROCEEDINGS`, `@MANUAL`, `@MASTERSTHESIS`, `@PHDTHESIS`, and
+`@TECHREPORT`): for example, in the entry type `@PHDTHESIS` for
+[@Wichtmann:2005a].
+
+A CD-ROM can be referenced when using the `@BOOK`, `@INBOOK`,
+`@INCOLLECTION`, or `@INPROCEEDINGS` categories, as in the entry
+[@Liggett:1998a]. The field "`howpublished`" is used to designate the
+medium in the `.bib` file:
+
+        howpublished = {CD-ROM},
+
+\appendix
+
+# Notation {#sec-app-notation}
+
+*The following symbols are used in this paper:*
+
+|                          |                      |
+| ------------------------ | -------------------- |
+| $D$                      | pile diameter (m);   |
+| $R$                      | distance (m); and    |
+| $C_{\mathrm{Oh\;no!}}$   | fudge factor.        |
+
+
+# Title block, publication types, and options {#sec-app-options}
+
+The title block, document classes, and other document options can be set in the `yaml` header.
+
+For example, to generate this example PDF file, the following `yaml` header is used
+
+```{.yaml} 
+title: | 
+  Template for Preparing Your Submission to the 
+  American Society Of Civil Engineers (ASCE) 
+
+author:
+  - name: Author One, S.M. ASCE
+    affiliations: Graduate Research Associate, First affiliation address
+    email: author.one@email.com
+  - name: Author Two, M. ASCE
+    affiliations: Assistant Professor, Second affiliation address
+    email: author.two@email.com
+  - name: Author three, A.M. ASCE
+    affiliations: Associate Professor, Third affiliation address
+    email: author.three@email.com
+    corresponding: true
+abstract: |
+  The abstract should be a single paragraph (150-175 words long) written
+  in plain language and include a summary of the key conclusions of the
+  manuscript. It should clearly state the purpose of the work, the scope
+  of the effort, the procedures used to execute the work, and major
+  findings. The abstract is the second most important online search
+  discovery element, after the title. Authors should review the abstract
+  to ensure that it accurately reflects the revised paper and should
+  strive to include any applicable keywords that would likely be used
+  during an online search. Mathematics and references are not permitted
+  in the abstract and will be removed by the copyeditors.
+keywords: template, quarto, asce
+bibliography: references.bib
+format: 
+  asce-pdf:
+    keep-tex: true
+    publication-type: NewProceedings
+    footer-lastname: Author1
+    classoption: [InsideFigs, LineNumbers]
+```
+
+## Authors and affiliations
+
+For now, I prefer to use a simplified way to define the authors and affiliations: just use `name`, `affiliations`, `email` and `corresponding` fields. See above `yaml` header. 
+I may change this in the future.
+
+For more detailed setups, see [quarto document](https://quarto.org/docs/journals/authors.html).
+
+## Format options
+
+The document class `ascelike-new.cls` provides several options given
+below. 
+
+### Publication types
+
+The `Proceedings|Journal|NewProceedings` option is the most
+important; the other options are largely incidental.
+
+In a quarto document, use `publication-type` to specify the overall format.
+
+1.  Options `Journal|Proceedings|NewProceedings` specify the overall
+    format of the output manuscript.
+
+    `Journal` produces double-spaced manuscripts for ASCE journals. As
+    default settings, it places tables and figures at the end of the
+    manuscript and produces lists of tables and figures. It places line
+    numbers within the left margin.
+
+    `Proceedings` produces older-style camera-ready single-spaced
+    manuscripts for ASCE conference proceedings. The newer ASCE style is
+    enacted with the `NewProceedings` option.
+
+    `NewProceedings` produces newer-style single-spaced manuscripts for
+    ASCE conference proceedings, as shown on the ASCE website (*ca.*
+    2013). As default settings, `NewProceedings` places figures and
+    tables within the text. It does not place line numbers within the
+    left margin.
+
+    If desired, the bottom right corner can be "tagged" with the
+    author's name (this can be done by inserting the command
+    `\NameTag{<`*your name*`>}` within the preamble of your document).
+    All of the default settings can be altered with the options that are
+    described below.
+
+### Fine-tuning options
+
+Use `classoption` to specify the following options.
+
+2.  Options `BackFigs|InsideFigs` can be used to override the default
+    placement of tables and figures in the `Journal`, `Proceedings`, and
+    `NewProceedings` formats.
+
+3.  Options `SingleSpace|DoubleSpace` can be used to override the
+    default text spacing in the `Journal`, `Proceedings`, and
+    `NewProceedings` formats.
+
+4.  Options `10pt|11pt|12pt` can be used to override the default text
+    size (12pt).
+
+5.  The option `NoLists` suppresses inclusion of lists of tables and
+    figures that would normally be included in the `Journal` format.
+
+6.  The option `NoPageNumbers` suppresses the printing of page numbers.
+
+7.  The option `SectionNumbers` produces an automatic numbering of
+    sections. Without the `SectionNumbers` option, sections will *not*
+    be numbered, as this seems to be the usual formatting in ASCE
+    journals (note that the Appendixes will, however, be automatically
+    "numbered" with Roman numerals). With the `SectionNumbers` option,
+    sections and subsections are numbered with Arabic numerals (e.g. 2,
+    2.1, etc.), but subsubsection headings will not be numbered.
+
+8.  The options `NoLineNumbers|LineNumbers` can be used to override the
+    default use (or absence) of line numbers in the `Journal`,
+    `Proceedings`, and `NewProceedings` formats.
+
+# References {-}
+
+::: {.refs}
+:::

@@ -1,0 +1,12 @@
+\title{$title$}
+$for(by-author)$
+\author[$it.number$$if(it.attributes.corresponding)$*$endif$]{$it.name.literal$}%
+$for(by-author.affiliations)$
+\affil[$it.number$$if(by-author.attributes.corresponding)$*$endif$]{
+	$if(it.name)$$it.name$; $endif$
+	$if(by-author.email)$Email: $by-author.email$$endif$
+	$if(by-author.attributes.corresponding)$; Corresponding author$endif$}
+$endfor$
+$endfor$
+
+\NameTag{$footer-lastname$, \today}
