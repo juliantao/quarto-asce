@@ -1,0 +1,406 @@
+%
+%
+% August 20, 2011
+%
+% Bibtex bibliographic data base using the canonical set given in the
+%   ASCE web document "Instructions For Preparation Of Electronic Manuscripts"
+% For use with the ascelike.bst bibliographic style file.
+%
+% A few 'fine points' about bibtex data bases:
+%   1) Entries that are NOT enclosed in quotations marks ("" "") 
+%      must contain data.  For example, the NUMBER entry.  If you don't
+%      know the NUMBER, don't leave it blank.  Just remove the entire 
+%      NUMBER line.
+%   2) Bibtex will suppress capital letters within the TITLE of an article
+%      (except for the first word of the title).  To force capitalization, 
+%      enclose the capitalized letter(s) in curly braces, such as {ASCE}
+%      of {SI}.
+%   3) Although unusual, if the reference has no author, you will need to
+%      be somewhat creative to produce ASCE-like output.  This usually occurs
+%      when the "non-author" is an organization instead of a person, but
+%      it also applies to newspaper articles.  Try the following:
+%        a) if the non-author is a a single word or abreviation ("ASTM" or
+%           "Newsweek"), try formatting as a book, incollection, or article,
+%           placing the non-author in the AUTHOR field.
+%        b) if the non-author is multiple word (Federal Highway 
+%           Administration), you will need to be creative, since bibtex
+%           will confuse the non-author as a person with first, middle, and
+%           last names (for example, Federal, H. A.).  Try using the MANUAL
+%           format as shown in FHWA:1991a, FR:1968a, and ICBO:1988a
+%
+%
+@incollection{ASTM:1991a,
+  AUTHOR = "ASTM",
+  TITLE = "Standard practice for the use of the international system of units ({
+           SI}) (the modernized metric system)",
+  EDITOR = "",
+  BOOKTITLE = "E 380-91a",
+  PUBLISHER = "ASTM",
+  ADDRESS = "Philadelphia, Pa.",
+  MONTH = "",
+  YEAR = 1991,
+  EDITION = "",
+  PAGES = "",
+  ORGANIZATION = "",
+  NOTE = "",
+}
+
+@misc{Burka:1993a,
+  author = {Burka, L. P.},
+  title = {A hypertext history of multi-user dimensions},
+  journal = {MUD history},
+  year = {1993},
+  month = {Dec. 5, 1994},
+  url = {http://www.ccs.neu.edu},
+}
+%
+@article{Dasgupta:2008a,
+  AUTHOR = "Dasgupta, G.",
+  TITLE = "Stiffness matrix from isoparametric closed form shape functions using
+           exact integration",
+  JOURNAL = "J. Aerosp. Eng.",
+  YEAR = 2008,
+  NOTE = "in press",
+}
+%
+@techreport{Duan:1990a,
+  AUTHOR = "Duan, L. and Loh, J. T. and Chen, W. F.",
+  TITLE = "M-{P}-f-based analysis of dented tubular members",
+  INSTITUTION = "School of Civ. Engrg., Purdue Univ.",
+  TYPE = "Struct. Engrg. Rep. No.",
+  NUMBER = "CE-STR-90-27",
+  ADDRESS = "West Lafayette, Ind.",
+  YEAR = 1990,
+  NOTE = "",
+  URL = "",
+}
+%
+@book{Duvant:1972a,
+  AUTHOR = "Duvant, G. and Lions, J. L.",
+  EDITOR = "",
+  TITLE = "Les in{\'{e}}quations en m{\'{e}}chanique et en physique",
+  PUBLISHER = "Dunod",
+  ADDRESS = "Paris, France",
+  YEAR = 1972,
+  EDITION = "",
+  NOTE = "(in French)",
+}
+%
+@phdthesis{Chang:1987a,
+  AUTHOR = "Chang, T. C.",
+  TITLE = "Network resource allocation using an expert system with fuzzy logic
+           reasoning",
+  SCHOOL = "University of California",
+  ADDRESS = "Berkeley, CA",
+  YEAR = 1987,
+  URL = "",
+}
+%
+@inproceedings{Eshenaur:1991a,
+  AUTHOR = "Eshenaur, S. R. and Kulicki, J. M. and Mertz, D. R.",
+  TITLE = "Retrofitting distortion-induced fatigue cracking of non-composite
+           steel girder-floorbeam-stringer bridges",
+  BOOKTITLE = "Proc., 8th Annual Int. Bridge Conf.",
+  EDITOR = "",
+  PUBLISHER = "",
+  YEAR = 1991,
+  ORGANIZATION = "Engineers' Soc. of Western Pennsylvania",
+  ADDRESS = "Pittsburgh, Pa.",
+  PAGES = "380--388",
+  NOTE = "",
+}
+%
+@inproceedings{Garrett:2003a,
+  AUTHOR = "Garrett, D. L.",
+  TITLE = "Coupled analysis of floating production systems",
+  BOOKTITLE = "Proc., Int. Symp. on Deep Mooring Systems",
+  EDITOR = "",
+  PUBLISHER = "",
+  YEAR = 2003,
+  ORGANIZATION = "ASCE",
+  ADDRESS = "Reston, VA",
+  PAGES = "152--167",
+  NOTE = "",
+  HOWPUBLISHED = "CD-ROM",
+}
+%
+@article{Gaspar:2001a,
+  AUTHOR = "Gaspar, N. and Koenders, M. A.",
+  TITLE = "Micromechanic formulation of macroscopic structures in a granular
+           medium",
+  JOURNAL = "J. Engrg. Mech.",
+  YEAR = 2001,
+  VOLUME = 127,
+  NUMBER = 10,
+  PAGES = "987--993",
+  NOTE = "",
+}
+%
+@incollection{Gaspar:2001b,
+  AUTHOR = "Gaspar, N. and Koenders, M. A.",
+  TITLE = "Estimates of the shear modulus of a granular assembly using
+           heterogeneous media techniques",
+  EDITOR = "Kishino, Y.",
+  BOOKTITLE = "Powders and Grains 2001",
+  PUBLISHER = "A.A. Balkema",
+  ADDRESS = "Lisse",
+  YEAR = 2001,
+  PAGES = "389--392",
+  ORGANIZATION = "",
+  NOTE = "",
+}
+%
+@manual{FHWA:1991a,
+  AUTHOR = "",
+  KEY = "Federal",
+  TITLE = "Evaluating scour at bridges",
+  ORGANIZATION = "Federal Highway Administration (FHWA)",
+  PUBLISHER = "Rep., Hydr. Engrg. Circular No. 18: FHWA-IP-90-017",
+  ADDRESS = "Washington, D.C.",
+  YEAR = 1991,
+  NOTE = "",
+}
+%
+@manual{FR:1968a,
+  AUTHOR = "",
+  KEY = "Federal",
+  TITLE = "Federal Register",
+  HOWPUBLISHED = "",
+  YEAR = 1988,
+  NOTE = "33(No. 146; July 27), 10756",
+}
+%
+@article{Frater:1992a,
+  AUTHOR = "Frater, G. S. and Packer, J. A.",
+  TITLE = "Weldment design for {RHS} truss connections. {I}: Applications",
+  JOURNAL = "J. Struct. Engrg.",
+  ORGANIZATION = "ASCE",
+  YEAR = 1992,
+  VOLUME = 118,
+  NUMBER = 10,
+  PAGES = "2784--2803",
+  NOTE = "",
+}
+%
+@article{Frater:1992b,
+  AUTHOR = "Frater, G. S. and Packer, J. A.",
+  TITLE = "Weldment design for {RHS} truss connections. {II}: Experimentation",
+  JOURNAL = "J. Struct. Engrg.",
+  ORGANIZATION = "ASCE",
+  MONTH = "",
+  YEAR = 1992,
+  VOLUME = 118,
+  NUMBER = 10,
+  PAGES = "2804--2820",
+  NOTE = "",
+}
+%
+@book{Goossens:1994a,
+  AUTHOR = "Goossens, M. and Mittlebach, F. and Samarin, A.",
+  TITLE = "The \LaTeX\ Companion",
+  PUBLISHER = "Addison--Wesley Pub. Co.",
+  ADDRESS = "Reading, Mass.",
+  YEAR = 1994,
+}
+@article{Huang2009a,
+  author = {Yue Huang and Roger Bird and Margaret Bell},
+  title = {A comparative study of the emission by road maintenance works and the
+           disrupted traffic using life cycle assessment and micro-simulation},
+  journal = {Transportation Research Part D},
+  year = {2009},
+  volume = {14},
+  pages = {197-204},
+}
+
+@article{Huang2009b,
+  author = {Yue Huang and Roger Bird and Oliver Hendrich},
+  title = {Development of a life cycle assessment tool for construction and
+           maintenance of asphalt pavements},
+  journal = {Journal of Cleaner Production},
+  year = {2009},
+  volume = {17},
+  pages = {283-296},
+}
+
+@manual{ICBO:1988a,
+  AUTHOR = "",
+  ORGANIZATION = "International Conference of Building Officials",
+  TITLE = "Uniform building code",
+  KEY = "International",
+  PUBLISHER = "",
+  ADDRESS = "Whittier, Calif.",
+  MONTH = "",
+  YEAR = 1988,
+  EDITION = "",
+  NOTE = "",
+}
+%
+@article{Ireland:1954a,
+  AUTHOR = "Ireland, H. O.",
+  TITLE = "Stability analysis of {C}ongress {S}treet open cut in {C}hicago",
+  JOURNAL = "G{\'{e}}otechnique",
+  ORGANIZATION = "London, England",
+  MONTH = "",
+  YEAR = 1954,
+  VOLUME = 4,
+  NUMBER = 4,
+  PAGES = "163--168",
+  NOTE = "",
+}
+%
+@misc{Kuhn:2011a,
+  author = {Kuhn, M. R.},
+  title = {Style files for {ASCE}-like documents},
+  journal = {ascelike},
+  year = {2011},
+  month = {Nov. 17, 2011},
+  url = {http://www.ctan.org/tex-archive/macros/latex/contrib/ascelike},
+}
+%
+@book{Lamport:1994a,
+  AUTHOR = "Lamport, L.",
+  TITLE = "\LaTeX: A Document Prepartation System User's Guide and Reference
+           Manual",
+  PUBLISHER = "Addison--Wesley Pub. Co.",
+  ADDRESS = "Reading, Mass.",
+  YEAR = 1994,
+}
+
+@incollection{Liggett:1998a,
+  author = {Liggett, J. A. and Caughey, D. A.},
+  title = {Fluid statics},
+  booktitle = {Fluid mechanics},
+  year = {1998},
+  howpublished = {CD-ROM},
+  chapter = {2},
+  publisher = {ASCE},
+  address = {Reston, VA},
+  pages = {167--177},
+}
+%
+@manual{Lotus:1985a,
+  AUTHOR = "",
+  TITLE = "Lotus 1-2-3 reference manual; release 2.01",
+  PUBLISHER = "Lotus Development Corp.",
+  KEY = "Lotus",
+  ADDRESS = "Cambridge, Mass.",
+  EDITION = "",
+  MONTH = "",
+  YEAR = 1985,
+  NOTE = "",
+}
+%
+@book{Melan:1913a,
+  AUTHOR = "Melan, J.",
+  EDITOR = "",
+  TITLE = "Theory of arches and suspension bridges",
+  PUBLISHER = "Myron C. Clark",
+  ADDRESS = "Chicago, Ill",
+  MONTH = "",
+  YEAR = 1913,
+  EDITION = "",
+  NOTE = "D. B. Steinman, translator",
+}
+%
+@manual{Moody:1988a,
+  AUTHOR = "",
+  TITLE = "Moody's municipal \& government manual",
+  PUBLISHER = "Moody's Investors Service",
+  KEY = "Moody",
+  ADDRESS = "New York, N.Y.",
+  EDITION = "",
+  MONTH = "",
+  YEAR = 1988,
+  NOTE = "",
+}
+%
+@article{Pennoni:1992a,
+  AUTHOR = "Pennoni, C. R.",
+  TITLE = "Visioning: the future of civil engineering",
+  JOURNAL = "J. Profl. Issues in Engrg. Education and Practice",
+  ORGANIZATION = "ASCE",
+  MONTH = "",
+  YEAR = 1992,
+  VOLUME = 118,
+  NUMBER = 3,
+  PAGES = "221--233",
+  NOTE = "",
+}
+%
+@article{Reiffenstuhl:1982a,
+  AUTHOR = "Reiffenstuhl, H.",
+  TITLE = "Das Vorspannen von Bewehrung auf Druck: Grundsaetzliches und
+           Anwendungsmoeglichkeiten [prestressing of reinforcing in compression:
+           fundamentals and application possibilities]",
+  JOURNAL = "Beton-und Stahlbetonbau",
+  ORGANIZATION = "Berlin, Germany",
+  MONTH = "",
+  YEAR = 1982,
+  VOLUME = 77,
+  NUMBER = 3,
+  PAGES = "69--73",
+  NOTE = "(in German)",
+}
+%
+% Note that the TYPE can be left blank ("") for the default M.S. thesis
+@mastersthesis{Sotiropulos:1991a,
+  AUTHOR = "Sotiropulos, S. N.",
+  TITLE = "Static response of bridge superstructures made of fiber reinforced
+           plastic",
+  SCHOOL = "West Virginia Univ.",
+  ADDRESS = "Morgantown, WV",
+  YEAR = 1991,
+  TYPE = "M.{S}. thesis",
+  URL = "",
+}
+%
+@article{Stahl:2004a,
+  AUTHOR = "Stahl, D. C. and Wolfe, R. W. and Begel, M.",
+  TITLE = "Improved analysis of timber rivet connections",
+  JOURNAL = "J. Struct. Eng.",
+  YEAR = 2004,
+  VOLUME = 130,
+  NUMBER = 8,
+  PAGES = "1272--1279",
+}
+%
+@article{Vesilind:1992a,
+  AUTHOR = "Vesilind, P. A.",
+  TITLE = "Discussion of `{G}uidance for engineering-design-class lectures on
+           ethics,' by {R}ichard {H}. {M}c{C}uen",
+  JOURNAL = "J. Profl. Issues in Engrg. Education and Practice",
+  ORGANIZATION = "ASCE",
+  MONTH = "",
+  YEAR = 1992,
+  VOLUME = 118,
+  NUMBER = 2,
+  PAGES = "214--215",
+  NOTE = "",
+}
+%
+@incollection{Zadeh:1981a,
+  AUTHOR = "Zadeh, L. A.",
+  TITLE = "Possibility theory and soft data analysis",
+  EDITOR = "L. Cobb and R. M. Thrall",
+  BOOKTITLE = "Mathematical frontiers of the social and policy sciences",
+  PUBLISHER = "Westview Press, Inc.",
+  ADDRESS = "Boulder, Colo.",
+  MONTH = "",
+  YEAR = 1981,
+  EDITION = "",
+  PAGES = "69--129",
+  ORGANIZATION = "",
+  NOTE = "",
+}
+%
+@phdthesis{Wichtmann:2005a,
+  AUTHOR = "Wichtmann, T.",
+  TITLE = "Explicit accumulation model for non-cohesive soils under cyclic
+           loading",
+  SCHOOL = "Institute for Soil Mechanics and Foundation Engineering, Ruhr-Univ.
+            Bochum, Germany",
+  ADDRESS = "",
+  YEAR = 2005,
+  URL = "www.rz.uni-karlsruhe.de/$\sim$gn97/",
+  MONTH = "2007",
+}
