@@ -28,6 +28,7 @@ contributes:
       format-resources:
         - "assets/ascelike-new.cls"
         - "assets/ascelike-new.bst"
+      link-citations: true
 
     html:
       toc: true
