@@ -18,6 +18,12 @@ contributes:
         title-delim: "." 
     pdf:
       pdf-engine: pdflatex
+      hyperrefoptions:
+        - hidelinks
+        - linkcolor=black
+      linkcolor: black
+      citecolor: black
+      urlcolor: black
       header-includes: |
         \usepackage[figurename=Fig.,labelfont=bf,labelsep=period]{caption}
         \usepackage{newtxtext,newtxmath}
