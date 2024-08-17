@@ -9,6 +9,11 @@
 
 This is a Quarto template that assists you in creating a manuscript for American Society of Civil Engineers journals and conference proceedings. You can learn more about the format requirements on the [ASCE website](https://ascelibrary.org/page/authorservicesjournals) and the [Overleaf template](https://www.overleaf.com/latex/templates/template-for-preparing-your-submission-to-the-american-society-of-civil-engineers-asce/pbwcqsvndpty), which this Quarto template was based off.
 
+This template and class file "`asce-quarto.cls`" produce manuscripts that comply with the guidelines of the American Society of Civil Engineers (ASCE). 
+
+The "`asce-quarto.cls`" used in this template is modified based on the original "`ascelike-new.cls`" class, which has been produced by [Overleaf](https://www.overleaf.com) in conjunction with the "`ascelike-new.bst`" citation style developed by Matthew R. Kuhn.
+It differs from "`ascelike-new.cls`" in that, the citation and bibliography related contents in the latter have been removed. Citation and bibliography styles are now handled using citation language style "`ascelike.cls`" with Pandoc's `citproc` via Quarto.
+
 ## Creating a New Article
 
 You can use this as a template to create an article for an AFT journal. To do this, use the following command:

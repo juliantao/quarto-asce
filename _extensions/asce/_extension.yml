@@ -15,15 +15,13 @@ contributes:
         tbl-title: "**Table**"
         eq-prefix: Eq.
         sec-prefix: Section
-        title-delim: "." 
+        title-delim: 'period'
     pdf:
       pdf-engine: pdflatex
-      hyperrefoptions:
-        - hidelinks
-        - linkcolor=black
-      linkcolor: black
-      citecolor: black
-      urlcolor: black
+      link-citations: true
+      linkcolor: NavyBlue
+      citecolor: NavyBlue
+      urlcolor: NavyBlue
       header-includes: |
         \usepackage[figurename=Fig.,labelfont=bf,labelsep=period]{caption}
         \usepackage{newtxtext,newtxmath}
@@ -32,9 +30,7 @@ contributes:
         - "partials/title.tex"
         - "partials/before-body.tex"
       format-resources:
-        - "assets/ascelike-new.cls"
-        - "assets/ascelike-new.bst"
-      link-citations: true
+        - "assets/asce-quarto.cls"
 
     html:
       toc: true

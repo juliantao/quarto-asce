@@ -1,7 +1,8 @@
-
-%% File: ascelike-new.cls
-%%
+%% File: asce-quarto.cls
+%% Note: for Quarto and Pandoc use with `citproc` only
 %% Version 1.0, 2016/03/18
+%% Modified by Julian Tao, based on ascelike-new.cls by Matthew R kuhn
+%% Notably, all the citation and bibliography related contents were removed
 %%
 %% An official LaTeX class file for preparing review manuscripts and
 %% camera-ready manuscripts for ASCE journals and conference proceedings
@@ -16,8 +17,6 @@
 %% Most importantly, you may modify this file, but only if you rename it.
 %%
 %% This is a contributed file to the LaTeX2e system.
-%%
-%% This program consists of the files ascelike-new.cls and ascelike-new.bst
 %%
 %% -----------------------------------
 %%
@@ -68,7 +67,7 @@
 %            unlike the ASCE convention.
 %%
 %% A few standard Latex options have been removed, as they don't seem to apply
-%%   in the ASCE environment: landscape, titlepage, openbib, leqno, fleqn
+%%   in the ASCE environment: landscape, titlepage, leqno, fleqn
 %%
 %% As for preparing the document file: except for the new options, you
 %%   should just use standard sequencing of LaTeX commands.  
@@ -136,7 +135,6 @@
 %
 \DeclareOption{landscape}{\OptionNotUsed}
 \DeclareOption{titlepage}{\OptionNotUsed}
-\DeclareOption{openbib}{\OptionNotUsed}
 \DeclareOption{leqno}{\OptionNotUsed}
 \DeclareOption{fleqn}{\OptionNotUsed}
 %
@@ -285,84 +283,6 @@
 %   adopted from the chicago.sty package.  I removed the 'long citation 
 %   style' to make all citations in the short style used by ASCE (i.e., 
 %   using "et. al" for multiple authors).  
-%
-% Here's an adaptation of chicago.sty notes for the various citation
-%   options that I've included:
-%
-%  \cite{key}
-%    which produces citations with full author list and year.
-%    eg. (Brown 1978; Jarke et al. 1985)
-%  \citeNP{key}
-%    which produces citations with full author list and year, but without
-%    enclosing parentheses:
-%    eg. Brown 1978; Jarke et. al 1985
-%  \citeA{key}
-%    which produces citations with only the full author list.
-%    eg. (Brown; Jarke et. al)
-%  \citeN{key}
-%    which produces citations with the full author list and year, but
-%    can be used as nouns in a sentence; no parentheses appear around
-%    the author names, but only around the year.
-%      eg. Shneiderman (1978) states that......
-%    \citeN should only be used for a single citation.
-%  \citeyear{key}
-%    which produces the year information only, within parentheses.
-%  \citeyearNP{key}
-%    which produces the year information only.
-%
-% `NP' means `no parentheses'.
-%
-\let\@internalcite\cite
-%
-% Place commas in-between citations in the same \citeyear, \citeyearNP,
-%  or \citeN command.
-% Use something like \citeN{ref1,ref2,ref3} and \citeN{ref4} for a list.
-%
-\newcommand{\citedata}%
-{\@ifnextchar [{\@tempswatrue\@citedatax}%
-	{\@tempswafalse\@citedatax[]}}
-%
-\def\@citedatax[#1]#2{%
-	\if@filesw\immediate\write\@auxout{\string\citation{#2}}\fi%
-	\def\@citea{}\@cite{\@for\@citeb:=#2\do%
-		{\@citea\def\@citea{, }\@ifundefined% by Young
-			{b@\@citeb}{{\bf ?}%
-				\@warning{Citation `\@citeb' on page \thepage \space undefined}}%
-			{\csname b@\@citeb\endcsname}}}{#1}}%
-%
-\def\@citex[#1]#2{%
-	\if@filesw\immediate\write\@auxout{\string\citation{#2}}\fi%
-	\def\@citea{}\@cite{\@for\@citeb:=#2\do%
-		{\@citea\def\@citea{; }\@ifundefined% by Young
-			{b@\@citeb}{{\bf ?}%
-				\@warning{Citation `\@citeb' on page \thepage \space undefined}}%
-			{\csname b@\@citeb\endcsname}}}{#1}}%
-%
-\renewcommand{\cite}%
-{\def\@citeseppen{-1000}%
-	\def\@cite##1##2{(##1\if@tempswa , ##2\fi)}%
-	\def\citeauthoryear##1##2##3{##2 ##3}\@internalcite}
-\newcommand{\citeNP}%
-{\def\@citeseppen{-1000}%
-	\def\@cite##1##2{##1\if@tempswa , ##2\fi}%
-	\def\citeauthoryear##1##2##3{##2 ##3}\@internalcite}
-\newcommand{\citeN}%
-{\def\@citeseppen{-1000}%
-	\def\@cite##1##2{##1\if@tempswa , ##2)\else{)}\fi}%
-	\def\citeauthoryear##1##2##3{##2 (##3}\citedata}
-\newcommand{\citeA}%
-{\def\@citeseppen{-1000}%
-	\def\@cite##1##2{(##1\if@tempswa , ##2\fi)}%
-	\def\citeauthoryear##1##2##3{##2}\@internalcite}
-\newcommand{\citeyear}%
-{\def\@citeseppen{-1000}%
-	\def\@cite##1##2{(##1\if@tempswa , ##2\fi)}%
-	\def\citeauthoryear##1##2##3{##3}\citedata}
-\newcommand{\citeyearNP}%
-{\def\@citeseppen{-1000}%
-	\def\@cite##1##2{##1\if@tempswa , ##2\fi}%
-	\def\citeauthoryear##1##2##3{##3}\citedata}
-%
 %
 % An ASCE-like title on the first page
 \renewcommand{\maketitle}{
@@ -582,35 +502,6 @@
 \renewcommand{\dblfloatpagefraction}{0.8}
 %
 %
-% An ASCE-like layout of the bibliographic items
-\renewcommand{\refname}{REFERENCES}
-\def\@biblabel#1{}
-\bibindent=1.0em
-\renewenvironment{thebibliography}[1]
-{\par%
-	\RefSectionType{\refname%
-		\@mkboth{\refname}{\refname}}%
-	\list{[\arabic{enumiv}]}%
-	{%\settowidth\labelwidth{\@biblabel{#1}}%
-		\setlength{\labelwidth}{0em}
-		\leftmargin\labelwidth
-		\setlength{\labelsep}{0.in}
-		\advance\leftmargin\labelsep
-		\advance\leftmargin\bibindent
-		\itemindent -\bibindent
-		\listparindent \itemindent
-		\setlength{\itemsep}{0ex}%
-		\setlength{\topsep}{0ex}%
-		\parsep \z@
-		\usecounter{enumiv}%
-		\let\p@enumiv\@empty
-		\renewcommand{\theenumiv}{\arabic{enumiv}}}%
-	\sloppy\clubpenalty4000\widowpenalty4000%
-	\sfcode`\.=\@m}
-{\def\@noitemerr
-	{\@latex@warning{Empty `thebibliography' environment}}%
-	\endlist}
-\renewcommand{\newblock}{}
 %
 % A new commond for "tagging" the author's name on the bottom right
 %   corner of the page (as per the ASCE shiny, camera-ready blank paper)
@@ -648,13 +539,6 @@
 		{\doublespacing\@starttoc{lof}\singlespacing}%              02-14-13
 		{\@starttoc{lof}}}
 }{}
-%
-\AtEndOfClass
-{\bibliographystyle{ascelike-new}
-	\ifthenelse{\boolean{NoPageNumbers}}
-	{\pagestyle{empty}}
-	{\pagestyle{plain}}
-}
 %
 \RequirePackage{silence}
 \WarningFilter{caption}{Unsupported document class}

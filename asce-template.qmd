@@ -34,12 +34,11 @@ format:
 
 # Introduction
 
-This template and class file "`ascelike-new.cls`" produce manuscripts
-that comply with the guidelines of the American Society of Civil
-Engineers (ASCE). It has been produced by
-[Overleaf](https://www.overleaf.com) in conjunction with the ASCE, and
-is based on the unofficial "`ascelike.cls`" developed by Matthew
-R. Kuhn.
+This template and class file "`asce-quarto.cls`", based on Matthew R. Kuhn's "`ascelike-new.cls`",produce manuscripts that comply with the guidelines of the American Society of Civil
+Engineers (ASCE). The original "`ascelike-new.cls`" class has been produced by [Overleaf](https://www.overleaf.com) in conjunction with the "`ascelike-new.bst`" citation style developed by Matthew R. Kuhn.
+
+The "`asce-quarto.cls`" differs from "`ascelike-new.cls`" in that, the citation and bibliography related contents in the latter have been removed. Citation and bibliography styles are now handled using citation language style "`ascelike.cls`" with Pandoc's `citproc` via Quarto.
+
 
 This template provides guidance on how to prepare your manuscript
 according to the ASCE requirements, including details on how to use
@@ -465,7 +464,7 @@ Smith 2004 or Smith and Jones 2004). A References section must be
 included that lists all references alphabetically by last name of the
 first author.
 
-When used together, `ascelike-new.cls` and `ascelike-new.bst` produce
+When used together, `asce-quarto.cls` and `asce.csl` produce
 citations and the References section in the correct format
 automatically.
 
@@ -476,33 +475,15 @@ the reference list will be deleted but queried by the copyeditor.
 Likewise, all references included in the References section must be
 cited in the text.
 
-The following citation options are available:
-
--   `\cite{key}` produces citations with full author list and year
-    [@Ireland:1954a].
-
--   `\citeNP{key}` produces citations with full author list and year,
-    but without enclosing parentheses: e.g. .
-
--   `\citeA{key}` produces citations with only the full author list:
-    e.g.
-
--   `\citeN{key}` produces citations with the full author list and year,
-    but which can be used as nouns in a sentence; no parentheses appear
-    around the author names, but only around the year: e.g. states that
-    ...
-
--   `\citeyear{key}` produces the year information only, within
-    parentheses, as in [-@Ireland:1954a].
-
--   `\citeyearNP{key}` produces the year information only, as in .
+The citation options are available at [Quarto website](https://quarto.org/docs/authoring/citations.html). 
+For example, `[-@Ireland:1954a]` produces the year information, [-@Ireland:1954a], only.
 
 The bibliographic data base `ascexmpl-new.bib` gives examples of
 bibliographic entries for different document types. These entries are
 from the canonical set in the ASCE web document "Instructions For
 Preparation Of Electronic Manuscripts" and from the ASCE website. The
 References section of this document has been automatically created with
-the `ascelike-new.bst` style for the following entries:
+the `asce.csl` style for the following entries:
 
 -   a book [@Goossens:1994a],
 
@@ -642,7 +623,7 @@ For more detailed setups, see [quarto document](https://quarto.org/docs/journals
 
 ## Format options
 
-The document class `ascelike-new.cls` provides several options given
+The document class `asce-quarto.cls` provides several options given
 below. 
 
 ### Publication types
