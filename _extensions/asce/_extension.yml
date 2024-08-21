@@ -15,7 +15,7 @@ contributes:
         tbl-title: "**Table**"
         eq-prefix: Eq.
         sec-prefix: Section
-        title-delim: 'period'
+        title-delim: '.'
     pdf:
       pdf-engine: pdflatex
       link-citations: true
