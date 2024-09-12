@@ -79,7 +79,7 @@
 %%
 \typeout{}
 \NeedsTeXFormat{LaTeX2e}[1994/12/01]
-\ProvidesClass{ascelike-new}
+\ProvidesClass{asce-quarto}
 [2016/03/18 Version 1.0 ASCE-like-new manuscripts (Am. Soc. Civ. Engr.)]
 \typeout{}
 \RequirePackage{ifthen}
