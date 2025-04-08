@@ -1,7 +1,7 @@
 > **Warning**
 
-> Starting from version 1.0.0, a cleaner version tex can be generated for direct submission to the journal. This was achieved by directly construct the template with only partials tat are absolutely necessary. 
-> There are many rough edges in this extension, especially on the handling of the `authors and affiliations` in the title block. 
+> Starting from version 1.0.0, a cleaner tex can be generated for direct submission to journals or conferences. This is achieved by directly constructing the template with only partials that are absolutely necessary. 
+> There are still some rough edges in this extension, especially on the handling of the `authors and affiliations` in the title block. 
 > Use with caution.
 > Contribution welcomed!
 
@@ -9,8 +9,6 @@
 # ASCE Quarto Template
 
 This is a Quarto template that assists you in creating a manuscript for American Society of Civil Engineers journals and conference proceedings. You can learn more about the format requirements on the [ASCE website](https://ascelibrary.org/page/authorservicesjournals) and the [Overleaf template](https://www.overleaf.com/latex/templates/template-for-preparing-your-submission-to-the-american-society-of-civil-engineers-asce/pbwcqsvndpty), which this Quarto template was based off.
-
-This template and class file "`ascelike-new.cls`" produce manuscripts that comply with the guidelines of the American Society of Civil Engineers (ASCE). 
 
 The "`ascelike-new.cls`" class and "`ascelike-new.bst`" citation style is from [Overleaf](https://www.overleaf.com) developed by Matthew R. Kuhn.
 Starting from Version 1.0.0, we are no longer using Pandoc's `citproc`, but rely on the original `ascelike-new.bst` citation file using `natbib` as the citation method.
@@ -98,16 +96,15 @@ format:
 
 ## A note on Tables
 
-In **Quarto**, it is suggested to use raw `\LaTex` code blocks to construct your table. Use `\lable{tbl-xx}` format to label your table and cite it using `Table \ref{tbl-xx}` in the text. For `html` formats, use markdown table format in a conditional div: `.content-visible when-format="html"`.
+It is recommended to use raw \LaTeX code blocks to construct tables. Label each table using the format \label{tbl-xx} and reference it in the text as Table~\ref{tbl-xx}.
+For html output, use a Markdown table wrapped in a conditional div: .content-visible when-format="html".
 
+code-highlighter
 
-## `code-highlighter` 
+When set to true, Quarto’s default code highlighting style is included, which adds a lengthy block to the LaTeX preamble. In most cases, this is unnecessary.
 
-If set `true`, default `Quarto` code highlighting style will be used.
-This will create a lengthy block in the preamble.
-Most of the time, this is not needed.
-In this example, I set it as `true` to show the above code block.
-Delete this line in your `yaml` header to generate a cleaner `tex` file for submission.
+In this example, it is enabled to demonstrate the highlighted YAML block above.
+To produce a cleaner .tex file for submission, simply remove this line from your YAML header.
 
 ## Authors and affiliations
 
