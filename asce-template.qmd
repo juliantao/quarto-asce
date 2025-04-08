@@ -401,62 +401,100 @@ The following is a guide to preparing tables as part of your submission
 
 ```{=latex} 
 \begin{longtable}{ll}
-\caption{This is a longtable example} \label{tbl-longtable} \\
+\caption{\label{tbl-longtable}This is a longtable example}\\
 \toprule
-Header 1 & Header 2 \\
+Header 1 & Header 2\\
 \midrule
+\endfirsthead
 
-Row 1 & Data \\
-Row 2 & Data \\
-Row 3 & Data \\
-Row 4 & Data \\
-Row 5 & Data \\
-Row 6 & Data \\
-Row 7 & Data \\
-Row 8 & Data \\
-Row 9 & Data \\
-Row 10 & Data \\
-Row 11 & Data \\
-Row 12 & Data \\
-Row 13 & Data \\
-Row 14 & Data \\
-Row 15 & Data \\
-Row 16 & Data \\
-Row 17 & Data \\
-Row 18 & Data \\
-Row 19 & Data \\
-Row 20 & Data \\
-Row 21 & Data \\
-Row 22 & Data \\
-Row 23 & Data \\
-Row 24 & Data \\
-Row 25 & Data \\
-Row 26 & Data \\
-Row 27 & Data \\
-Row 28 & Data \\
-Row 29 & Data \\
-Row 30 & Data \\
-Row 31 & Data \\
-Row 32 & Data \\
-Row 33 & Data \\
-Row 34 & Data \\
-Row 35 & Data \\
-Row 36 & Data \\
-Row 37 & Data \\
-Row 38 & Data \\
-Row 39 & Data \\
-Row 40 & Data \\
-Row 41 & Data \\
-Row 42 & Data \\
-Row 43 & Data \\
-Row 44 & Data \\
-Row 45 & Data \\
+\multicolumn{2}{c}{\tablename\ \thetable\ -- Continued from previous page}\\
+\toprule
+Header 1 & Header 2\\
+\midrule
+\endhead
+
+\midrule
+\multicolumn{2}{r}{Continued on next page}\\
+\endfoot
+
 \bottomrule
+\endlastfoot
+
+Row 1  & Data\\
+Row 2  & Data\\
+Row 3  & Data\\
+Row 4  & Data\\
+Row 5  & Data\\
+Row 6  & Data\\
+Row 7  & Data\\
+Row 8  & Data\\
+Row 9  & Data\\
+Row 10 & Data\\
+Row 11 & Data\\
+Row 12 & Data\\
+Row 13 & Data\\
+Row 14 & Data\\
+Row 15 & Data\\
+Row 16 & Data\\
+Row 17 & Data\\
+Row 18 & Data\\
+Row 19 & Data\\
+Row 20 & Data\\
+Row 21 & Data\\
+Row 22 & Data\\
+Row 23 & Data\\
+Row 24 & Data\\
+Row 25 & Data\\
+Row 26 & Data\\
+Row 27 & Data\\
+Row 28 & Data\\
+Row 29 & Data\\
+Row 30 & Data\\
+Row 31 & Data\\
+Row 32 & Data\\
+Row 33 & Data\\
+Row 34 & Data\\
+Row 35 & Data\\
+Row 36 & Data\\
+Row 37 & Data\\
+Row 38 & Data\\
+Row 39 & Data\\
+Row 40 & Data\\
+Row 41 & Data\\
+Row 42 & Data\\
+Row 43 & Data\\
+Row 44 & Data\\
+Row 45 & Data\\
 \end{longtable}
 ```
 
 
 ```{.latex} 
+\begin{longtable}{ll}
+\caption{\label{tbl-longtable}This is a longtable example}\\
+\toprule
+Header 1 & Header 2\\
+\midrule
+\endfirsthead
+
+\multicolumn{2}{c}{\tablename\ \thetable\ -- Continued from previous page}\\
+\toprule
+Header 1 & Header 2\\
+\midrule
+\endhead
+
+\midrule
+\multicolumn{2}{r}{Continued on next page}\\
+\endfoot
+
+\bottomrule
+\endlastfoot
+
+Row 1  & Data\\
+Row 2  & Data\\
+... & ... \\
+Row 45 & Data\\
+\end{longtable}
 ```
 
 
