@@ -4,26 +4,23 @@
 
 \centering{
 
-\centering
-\small
-\renewcommand{\arraystretch}{1.25}
-\begin{tabular}{l l}
-\hline\hline
-\multicolumn{1}{c}{Assembly Attribute} &
-\multicolumn{1}{c}{Values} \\
-\multicolumn{1}{c}{(1)} &
-\multicolumn{1}{c}{(2)} \\
-\hline
+\begin{tabular}[]{@{}
+  l
+  l@{}}
+\toprule\noalign{}
+Assembly Attribute (1)
+ & Values (2)
+ \\
+\midrule\noalign{}
+
 Number of particles & 4008 \\
-Particle sizes & Multiple  \\
-Particle size range & $0.45D_{50}^{\:\ast}$ to $1.40D_{50}$ \\
-Initial void ratio, $e_{\mathrm{init}}$ & $0.179$ \\
-Assembly size & $54D_{50} \times 54D_{50} \times 54D_{50}$ \\
-\hline
-\multicolumn{2}{l}{$\ast$ $D_{50}$ represents the median particle diameter} \\
-\hline\hline
+Particle sizes & Multiple \\
+Particle size range & \(0.45D_{50}^{\:\ast}\) to \(1.40D_{50}\) \\
+Initial void ratio, \(e_{\mathrm{init}}\) & \(0.179\) \\
+Assembly size & \(54D_{50} \times 54D_{50} \times 54D_{50}\) \\
+\(\ast\) \(D_{50}\) represents the median particle diameter & \\
+\bottomrule\noalign{}
 \end{tabular}
-\normalsize
 
 }
 

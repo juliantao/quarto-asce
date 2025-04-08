@@ -12,19 +12,16 @@
 %\usepackage{amsbsy}
 \usepackage{newtxtext,newtxmath}
 \usepackage[colorlinks=true,citecolor=red,linkcolor=black]{hyperref}
+% Tables
+\usepackage{longtable,booktabs,array}
 
-%code-highlighting
 
 $if(code-highlighter)$
 $code-highlighter.tex()$
 $endif$
 
-
 % Graphics
 $graphics.tex()$
-
-% Tightlist for pandoc use
-$tightlist.tex()$
 
 % Please add the first author's last name here for the footer:
 \NameTag{$footer-lastname$, \today}

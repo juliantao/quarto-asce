@@ -1,6 +1,6 @@
 title: American Society of Civil Engineers
 author: Julian Tao 
-version: 1.0.0
+version: 1.0.1
 contributes:
   format:
     common:
@@ -27,12 +27,12 @@ contributes:
       # biblio-style: ascelike-new
       cite-method: natbib
       template: ./partials/ascelike-new-template.tex
-      # filters:
-      #   - "filters/table-replacement.lua"
+      filters:
+        - "filters/table-replacement.lua"
       template-partials:
         - "partials/doc-class.tex"
         - "partials/graphics.tex"
-        - "partials/tightlist.tex"
+        # - "partials/tightlist.tex"
         - "partials/code-highlighter.tex"
         - "partials/before-body.tex"
         - "partials/_authors.tex"

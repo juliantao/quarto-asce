@@ -20,8 +20,9 @@
 %\usepackage{amsbsy}
 \usepackage{newtxtext,newtxmath}
 \usepackage[colorlinks=true,citecolor=red,linkcolor=black]{hyperref}
+% Tables
+\usepackage{longtable,booktabs,array}
 
-%code-highlighting
 
 \usepackage{color}
 \usepackage{fancyvrb}
@@ -63,7 +64,6 @@
 \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.07,0.07,0.07}{#1}}
 \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
 \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
-
 % Graphics
 \usepackage{graphicx}
 \makeatletter
@@ -78,9 +78,6 @@
 	\fi%
 }
 
-% Tightlist for pandoc use
-\providecommand{\tightlist}{%
-	\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 % Please add the first author's last name here for the footer:
 \NameTag{Author1, \today}
 % Note that this is not displayed if the NoPageNumbers option is used
@@ -467,12 +464,32 @@ The following is a guide to preparing tables as part of your submission
   Tables with multiple parts should either be combined into one table or
   split into separate tables.
 \item
-  In \textbf{Quarto}, it is suggested to use raw
-  \texttt{\textbackslash{}LaTex} code blocks to construct your table.
-  Use \texttt{\textbackslash{}lable\{tbl-xx\}} format to label your
-  table and cite it using \texttt{Table\ \textbackslash{}ref\{tbl-xx\}}
-  in the text. For \texttt{html} formats, use markdown table format in a
-  conditional div: \texttt{.content-visible\ when-format="html"}.
+  It is recommended to use raw \texttt{\textbackslash{}LaTeX} code
+  blocks to construct tables for PDF output.\\
+  Label your table using the format
+  \texttt{\textbackslash{}label\{tbl-xx\}} and cite it in the text with
+  \texttt{Table\textasciitilde{}\textbackslash{}ref\{tbl-xx\}}.\\
+  For HTML output, use a Markdown table wrapped in a conditional div:\\
+  \texttt{.content-visible\ when-format="html"}.
+\item
+  If you use a Markdown table for PDF rendering, the
+  \texttt{table-replacement.lua} filter will convert it to a
+  \texttt{tabular} environment (not \texttt{longtable}).\\
+  The \texttt{booktabs} package is still applied for improved
+  formatting.\\
+  For example, Table\textasciitilde{}\ref{tbl-assembly} is rendered
+  directly from a Markdown table.
+\item
+  If a \texttt{longtable} environment is required (e.g., for multi-page
+  tables), you can use raw LaTeX within a \texttt{\{=latex\}} code
+  block.\\
+  Table \ref{tbl-longtable} demonstrates a table created this way. The
+  downside is that for \texttt{Journal} option, the table will be placed
+  in instead of after the main text. However, the caption will still be
+  included in the \texttt{List\ of\ Tables}. This will mess up the Table
+  numbers and your first \texttt{longtable} will always be the Table 1
+  since it appears in the text. So a suggestions is, avoid using
+  \texttt{longtable} if possible.
 \end{itemize}
 
 \begin{table}
@@ -481,30 +498,93 @@ The following is a guide to preparing tables as part of your submission
 
 \centering{
 
-\centering
-\small
-\renewcommand{\arraystretch}{1.25}
-\begin{tabular}{l l}
-\hline\hline
-\multicolumn{1}{c}{Assembly Attribute} &
-\multicolumn{1}{c}{Values} \\
-\multicolumn{1}{c}{(1)} &
-\multicolumn{1}{c}{(2)} \\
-\hline
+\begin{tabular}[]{@{}
+  l
+  l@{}}
+\toprule\noalign{}
+Assembly Attribute (1)
+ & Values (2)
+ \\
+\midrule\noalign{}
+
 Number of particles & 4008 \\
-Particle sizes & Multiple  \\
-Particle size range & $0.45D_{50}^{\:\ast}$ to $1.40D_{50}$ \\
-Initial void ratio, $e_{\mathrm{init}}$ & $0.179$ \\
-Assembly size & $54D_{50} \times 54D_{50} \times 54D_{50}$ \\
-\hline
-\multicolumn{2}{l}{$\ast$ $D_{50}$ represents the median particle diameter} \\
-\hline\hline
+Particle sizes & Multiple \\
+Particle size range & \(0.45D_{50}^{\:\ast}\) to \(1.40D_{50}\) \\
+Initial void ratio, \(e_{\mathrm{init}}\) & \(0.179\) \\
+Assembly size & \(54D_{50} \times 54D_{50} \times 54D_{50}\) \\
+\(\ast\) \(D_{50}\) represents the median particle diameter & \\
+\bottomrule\noalign{}
 \end{tabular}
-\normalsize
 
 }
 
 \end{table}%
+
+\begin{longtable}{ll}
+
+\caption{\label{tbl-longtable}This is a longtable example}
+
+\tabularnewline
+
+  \\
+\toprule
+Header 1 & Header 2 \\
+\midrule
+
+Row 1 & Data \\
+Row 2 & Data \\
+Row 3 & Data \\
+Row 4 & Data \\
+Row 5 & Data \\
+Row 6 & Data \\
+Row 7 & Data \\
+Row 8 & Data \\
+Row 9 & Data \\
+Row 10 & Data \\
+Row 11 & Data \\
+Row 12 & Data \\
+Row 13 & Data \\
+Row 14 & Data \\
+Row 15 & Data \\
+Row 16 & Data \\
+Row 17 & Data \\
+Row 18 & Data \\
+Row 19 & Data \\
+Row 20 & Data \\
+Row 21 & Data \\
+Row 22 & Data \\
+Row 23 & Data \\
+Row 24 & Data \\
+Row 25 & Data \\
+Row 26 & Data \\
+Row 27 & Data \\
+Row 28 & Data \\
+Row 29 & Data \\
+Row 30 & Data \\
+Row 31 & Data \\
+Row 32 & Data \\
+Row 33 & Data \\
+Row 34 & Data \\
+Row 35 & Data \\
+Row 36 & Data \\
+Row 37 & Data \\
+Row 38 & Data \\
+Row 39 & Data \\
+Row 40 & Data \\
+Row 41 & Data \\
+Row 42 & Data \\
+Row 43 & Data \\
+Row 44 & Data \\
+Row 45 & Data \\
+\bottomrule
+
+\end{longtable}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\end{Highlighting}
+\end{Shaded}
 
 \section{Figure, Table and Text
 Permissions}\label{figure-table-and-text-permissions}
@@ -697,10 +777,23 @@ categories, as in the entry \citep{Liggett:1998a}. The field
 
 \emph{The following symbols are used in this paper:}
 
-\begin{tabular}{r  @{\hspace{1em}=\hspace{1em}}  l}
-$D$                    & pile diameter (m); \\
-$R$                    & distance (m);      and\\
-$C_{\mathrm{Oh\;no!}}$ & fudge factor.
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{\textbackslash{}begin}\NormalTok{\{}\ExtensionTok{tabular}\NormalTok{\}\{r  }\CharTok{@\{\textbackslash{}hspace\{1em\}=\textbackslash{}hspace\{1em\}\}}\NormalTok{  l\}}
+\SpecialStringTok{$D$}                    \OperatorTok{\&}\NormalTok{ pile diameter (m); }\FunctionTok{\textbackslash{}\textbackslash{}}
+\SpecialStringTok{$R$}                    \OperatorTok{\&}\NormalTok{ distance (m);      and}\FunctionTok{\textbackslash{}\textbackslash{}}
+\SpecialStringTok{$C\_\{}\SpecialCharTok{\textbackslash{}mathrm}\SpecialStringTok{\{Oh}\SpecialCharTok{\textbackslash{};}\SpecialStringTok{no!\}\}$} \OperatorTok{\&}\NormalTok{ fudge factor.}
+\KeywordTok{\textbackslash{}end}\NormalTok{\{}\ExtensionTok{tabular}\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{tabular}[]{@{}ll@{}}
+\toprule\noalign{}
+
+\(D\) & pile diameter (m); \\
+\(R\) & distance (m); and \\
+\(C_{\mathrm{Oh\;no!}}\) & fudge factor. \\
+\bottomrule\noalign{}
 \end{tabular}
 
 \section{Title block, publication types, and
