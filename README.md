@@ -1,5 +1,6 @@
 > **Warning**
 
+> Starting from version 1.0.0, a cleaner version tex can be generated for direct submission to the journal. This was achieved by directly construct the template with only partials tat are absolutely necessary. 
 > There are many rough edges in this extension, especially on the handling of the `authors and affiliations` in the title block. 
 > Use with caution.
 > Contribution welcomed!
@@ -9,10 +10,10 @@
 
 This is a Quarto template that assists you in creating a manuscript for American Society of Civil Engineers journals and conference proceedings. You can learn more about the format requirements on the [ASCE website](https://ascelibrary.org/page/authorservicesjournals) and the [Overleaf template](https://www.overleaf.com/latex/templates/template-for-preparing-your-submission-to-the-american-society-of-civil-engineers-asce/pbwcqsvndpty), which this Quarto template was based off.
 
-This template and class file "`asce-quarto.cls`" produce manuscripts that comply with the guidelines of the American Society of Civil Engineers (ASCE). 
+This template and class file "`ascelike-new.cls`" produce manuscripts that comply with the guidelines of the American Society of Civil Engineers (ASCE). 
 
-The "`asce-quarto.cls`" used in this template is modified based on the original "`ascelike-new.cls`" class, which has been produced by [Overleaf](https://www.overleaf.com) in conjunction with the "`ascelike-new.bst`" citation style developed by Matthew R. Kuhn.
-It differs from "`ascelike-new.cls`" in that, the citation and bibliography related contents in the latter have been removed. Citation and bibliography styles are now handled using citation language style "`ascelike.cls`" with Pandoc's `citproc` via Quarto.
+The "`ascelike-new.cls`" class and "`ascelike-new.bst`" citation style is from [Overleaf](https://www.overleaf.com) developed by Matthew R. Kuhn.
+Starting from Version 1.0.0, we are no longer using Pandoc's `citproc`, but rely on the original `ascelike-new.bst` citation file using `natbib` as the citation method.
 
 ## Creating a New Article
 
@@ -73,6 +74,7 @@ author:
     affiliations: Associate Professor, Third affiliation address
     email: author.three@email.com
     corresponding: true
+code-highlighter: true # This line can be removed for most cases to keep the tex file cleaner.
 abstract: |
   The abstract should be a single paragraph (150-175 words long) written
   in plain language and include a summary of the key conclusions of the
@@ -93,6 +95,19 @@ format:
     footer-lastname: Author1
     classoption: [InsideFigs, LineNumbers]
 ```
+
+## A note on Tables
+
+In **Quarto**, it is suggested to use raw `\LaTex` code blocks to construct your table. Use `\lable{tbl-xx}` format to label your table and cite it using `Table \ref{tbl-xx}` in the text. For `html` formats, use markdown table format in a conditional div: `.content-visible when-format="html"`.
+
+
+## `code-highlighter` 
+
+If set `true`, default `Quarto` code highlighting style will be used.
+This will create a lengthy block in the preamble.
+Most of the time, this is not needed.
+In this example, I set it as `true` to show the above code block.
+Delete this line in your `yaml` header to generate a cleaner `tex` file for submission.
 
 ## Authors and affiliations
 

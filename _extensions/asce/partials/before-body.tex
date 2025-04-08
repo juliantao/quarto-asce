@@ -1,12 +1,21 @@
+% Title
+$if(title)$
+\title{$title$}
+$endif$
+
+% Author
+$_authors.tex()$
+
 \maketitle
 
+% Abstract
 \begin{abstract}
 	$abstract$
 \end{abstract}
 
+% Keywords
 $if(keywords)$
 \KeyWords{$keywords$}
 $endif$
-\par
-\vspace{1em}
+
 

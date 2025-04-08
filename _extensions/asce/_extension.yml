@@ -1,13 +1,51 @@
 title: American Society of Civil Engineers
 author: Julian Tao 
-version: 0.2.1
+version: 1.0.0
 contributes:
   format:
     common:
-      csl: "assets/asce.csl"
+      filters:
+        - "filters/color-text.lua"
+        - at: pre-quarto
+          path: "filters/citeproc.lua"
+        - at: pre-quarto
+          path: "filters/wordcount.lua"
+      citproc: false
+      shortcodes:
+        - "filters/shortcodes.lua"
+        - "filters/words.lua"
+      knitr:
+        opts_chunk:
+          echo: false
       execute:
         echo: false
         warning: false
+    pdf:
+      pdf-engine: pdflatex
+      documentclass: ascelike-new
+      # This format use a bst file with natbib
+      # biblio-style: ascelike-new
+      cite-method: natbib
+      template: ./partials/ascelike-new-template.tex
+      # filters:
+      #   - "filters/table-replacement.lua"
+      template-partials:
+        - "partials/doc-class.tex"
+        - "partials/graphics.tex"
+        - "partials/tightlist.tex"
+        - "partials/code-highlighter.tex"
+        - "partials/before-body.tex"
+        - "partials/_authors.tex"
+        - "partials/_preamble.tex"
+      format-resources:
+        # Add here the resources required for the PDF rendering
+        - ascelike-new.cls
+        - ascelike-new.bst
+    html:
+      toc: true
+      number-sections: true
+      theme: custom.scss
+      csl: https://www.zotero.org/styles/american-society-of-civil-engineers
       crossref:
         fig-prefix: Fig.
         fig-title: "**Fig.**"
@@ -16,21 +54,3 @@ contributes:
         eq-prefix: Eq.
         sec-prefix: Section
         title-delim: '\.'
-    pdf:
-      pdf-engine: pdflatex
-      link-citations: true
-      linkcolor: NavyBlue
-      citecolor: NavyBlue
-      urlcolor: NavyBlue
-      header-includes: |
-        \usepackage[figurename=Fig.,labelfont=bf,labelsep=period]{caption}
-        \usepackage{newtxtext,newtxmath}
-      template-partials:
-        - "partials/doc-class.tex"
-        - "partials/title.tex"
-        - "partials/before-body.tex"
-      format-resources:
-        - "assets/asce-quarto.cls"
-
-    html:
-      toc: true

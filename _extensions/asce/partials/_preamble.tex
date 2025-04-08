@@ -1,0 +1,33 @@
+% Some useful packages...
+\usepackage{natbib}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage[style=base,figurename=Fig.,labelfont=bf,labelsep=period]{caption}
+\usepackage{subcaption}
+\usepackage{amsmath}
+%\usepackage{amsfonts}
+%\usepackage{amssymb}
+%\usepackage{amsbsy}
+\usepackage{newtxtext,newtxmath}
+\usepackage[colorlinks=true,citecolor=red,linkcolor=black]{hyperref}
+
+%code-highlighting
+
+$if(code-highlighter)$
+$code-highlighter.tex()$
+$endif$
+
+
+% Graphics
+$graphics.tex()$
+
+% Tightlist for pandoc use
+$tightlist.tex()$
+
+% Please add the first author's last name here for the footer:
+\NameTag{$footer-lastname$, \today}
+% Note that this is not displayed if the NoPageNumbers option is used
+% in the documentclass declaration.
+%

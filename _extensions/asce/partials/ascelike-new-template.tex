@@ -1,0 +1,19 @@
+$doc-class.tex()$
+
+$_preamble.tex()$
+
+\begin{document}
+
+$before-body.tex()$
+
+$body$
+
+%
+% Here's the list of references:
+%
+% \label{section:references}
+$if(bibliography)$
+\bibliography{$for(bibliography)$$bibliography$$sep$,$endfor$}
+$endif$
+
+\end{document}

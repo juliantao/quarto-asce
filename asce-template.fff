@@ -1,0 +1,24 @@
+\begin{figure}
+
+\centering{
+
+\pandocbounded{\includegraphics[keepaspectratio]{asce-template_files/figure-pdf/fig-fill-between-output-1.pdf}}
+
+}
+
+\caption{\label{fig-fill-between}An example figure.}
+
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+
+\centering{
+
+\pandocbounded{\includegraphics[keepaspectratio]{./img/asce-logo.pdf}}
+
+}
+
+\caption{\label{fig-asce-logo}ASCE logo with signature on one line}
+
+\end{figure}

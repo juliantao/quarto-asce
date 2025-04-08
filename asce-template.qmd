@@ -11,6 +11,7 @@ author:
     affiliations: Associate Professor, Third affiliation address
     email: author.three@email.com
     corresponding: true
+code-highlighter: true
 abstract: |
   The abstract should be a single paragraph (150-175 words long) written
   in plain language and include a summary of the key conclusions of the
@@ -27,18 +28,15 @@ bibliography: references.bib
 format: 
   asce-pdf:
     keep-tex: true
-    publication-type: NewProceedings
+    publication-type: Journal
     footer-lastname: Author1
-    classoption: [InsideFigs, LineNumbers]
+    classoption: [LineNumbers]
 ---
 
 # Introduction
 
-This template and class file "`asce-quarto.cls`", based on Matthew R. Kuhn's "`ascelike-new.cls`",produce manuscripts that comply with the guidelines of the American Society of Civil
-Engineers (ASCE). The original "`ascelike-new.cls`" class has been produced by [Overleaf](https://www.overleaf.com) in conjunction with the "`ascelike-new.bst`" citation style developed by Matthew R. Kuhn.
-
-The "`asce-quarto.cls`" differs from "`ascelike-new.cls`" in that, the citation and bibliography related contents in the latter have been removed. Citation and bibliography styles are now handled using citation language style "`ascelike.cls`" with Pandoc's `citproc` via Quarto.
-
+This `Quarto` template produces manuscripts that comply with the guidelines of the American Society of Civil
+Engineers (ASCE). It is based on the original "`ascelike-new.cls`" class that has been produced by [Overleaf](https://www.overleaf.com) in conjunction with the "`ascelike-new.bst`" citation style developed by Matthew R. Kuhn.
 
 This template provides guidance on how to prepare your manuscript
 according to the ASCE requirements, including details on how to use
@@ -279,7 +277,7 @@ capitalize only the first letter of subsubsection headings.
 # Figures and Tables
 
 This template includes two examples of figure (@fig-fill-between, @fig-asce-logo) and a table
-(@tbl-assembly). 
+(Table \ref{tbl-assembly}). 
 @fig-fill-between is a computed figure with python. 
 It has a caption with no more information than the figure itself, a very poor practice indeed.
 A reference here [@Stahl:2004a].
@@ -374,7 +372,12 @@ The following is a guide to preparing tables as part of your submission
 -   Tables should not be submitted in multiple parts (Table 1a, 1b,
     etc.). Tables with multiple parts should either be combined into one
     table or split into separate tables.
+-   In **Quarto**, it is suggested to use raw `\LaTex` code blocks to construct your table.
+    Use `\lable{tbl-xx}` format to label your table and cite it using `Table \ref{tbl-xx}` 
+    in the text. For `html` formats, use markdown table format in a conditional div: 
+    `.content-visible when-format="html"`.
 
+::: {.content-visible when-format="html"}
 
 | Assembly Attribute (1)                  | Values (2)                                 |
 |-----------------------------------------|--------------------------------------------|
@@ -386,6 +389,36 @@ The following is a guide to preparing tables as part of your submission
 |$\ast$ $D_{50}$ represents the median particle diameter|
 
 : An example table {#tbl-assembly tbl-colwidths="[60, 40]"}
+
+:::
+
+
+```{=latex} 
+\begin{table}
+\caption{An example table}
+\label{tbl-assembly}
+\centering
+\small
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{l l}
+\hline\hline
+\multicolumn{1}{c}{Assembly Attribute} &
+\multicolumn{1}{c}{Values} \\
+\multicolumn{1}{c}{(1)} &
+\multicolumn{1}{c}{(2)} \\
+\hline
+Number of particles & 4008 \\
+Particle sizes & Multiple  \\
+Particle size range & $0.45D_{50}^{\:\ast}$ to $1.40D_{50}$ \\
+Initial void ratio, $e_{\mathrm{init}}$ & $0.179$ \\
+Assembly size & $54D_{50} \times 54D_{50} \times 54D_{50}$ \\
+\hline
+\multicolumn{2}{l}{$\ast$ $D_{50}$ represents the median particle diameter} \\
+\hline\hline
+\end{tabular}
+\normalsize
+\end{table}
+```
 
 
 # Figure, Table and Text Permissions
@@ -564,11 +597,24 @@ medium in the `.bib` file:
 
 *The following symbols are used in this paper:*
 
+```{=latex} 
+\begin{tabular}{r  @{\hspace{1em}=\hspace{1em}}  l}
+$D$                    & pile diameter (m); \\
+$R$                    & distance (m);      and\\
+$C_{\mathrm{Oh\;no!}}$ & fudge factor.
+\end{tabular}
+```
+
+::: {.content-visible when-format="html"}
+
 |                          |                      |
 | ------------------------ | -------------------- |
 | $D$                      | pile diameter (m);   |
 | $R$                      | distance (m); and    |
 | $C_{\mathrm{Oh\;no!}}$   | fudge factor.        |
+
+:::
+
 
 
 # Title block, publication types, and options {#sec-app-options}
@@ -593,6 +639,7 @@ author:
     affiliations: Associate Professor, Third affiliation address
     email: author.three@email.com
     corresponding: true
+code-highlighter: true
 abstract: |
   The abstract should be a single paragraph (150-175 words long) written
   in plain language and include a summary of the key conclusions of the
@@ -613,6 +660,14 @@ format:
     footer-lastname: Author1
     classoption: [InsideFigs, LineNumbers]
 ```
+
+## `code-highlighter` 
+
+If set `true`, default `Quarto` code highlighting style will be used.
+This will create a lengthy block in the preamble.
+Most of the time, this is not needed.
+In this example, I set it as `true` to show the above code block.
+Delete this line in your `yaml` header to generate a cleaner `tex` file for submission.
 
 ## Authors and affiliations
 

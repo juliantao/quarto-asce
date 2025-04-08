@@ -1,67 +1,27 @@
-% Options for packages loaded elsewhere
-\PassOptionsToPackage{unicode}{hyperref}
-\PassOptionsToPackage{hyphens}{url}
-\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[Journal,LineNumbers]{ascelike-new}
+\WarningFilter{caption}{Unknown document class}
+%% Please choose the appropriate document class option:
+% "Journal" produces double-spaced manuscripts for ASCE journals.
+% "NewProceedings" produces single-spaced manuscripts for ASCE conference proceedings.
+% "Proceedings" produces older-style single-spaced manuscripts for ASCE conference proceedings. 
 %
-\documentclass[NewProceedings, InsideFigs,LineNumbers]{asce-quarto}
-
-\usepackage{amsmath,amssymb}
-\usepackage{iftex}
-\ifPDFTeX
-  \usepackage[T1]{fontenc}
-  \usepackage[utf8]{inputenc}
-  \usepackage{textcomp} % provide euro and other symbols
-\else % if luatex or xetex
-  \usepackage{unicode-math}
-  \defaultfontfeatures{Scale=MatchLowercase}
-  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
-\fi
+%% For more details and options, please see the notes in the ascelike-new.cls file.
+% Some useful packages...
+\usepackage{natbib}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 \usepackage{lmodern}
-\ifPDFTeX\else  
-    % xetex/luatex font selection
-\fi
-% Use upquote if available, for straight quotes in verbatim environments
-\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
-\IfFileExists{microtype.sty}{% use microtype if available
-  \usepackage[]{microtype}
-  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
-}{}
-\makeatletter
-\@ifundefined{KOMAClassName}{% if non-KOMA class
-  \IfFileExists{parskip.sty}{%
-    \usepackage{parskip}
-  }{% else
-    \setlength{\parindent}{0pt}
-    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
-}{% if KOMA class
-  \KOMAoptions{parskip=half}}
-\makeatother
-\usepackage{xcolor}
-\setlength{\emergencystretch}{3em} % prevent overfull lines
-\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
-% Make \paragraph and \subparagraph free-standing
-\makeatletter
-\ifx\paragraph\undefined\else
-  \let\oldparagraph\paragraph
-  \renewcommand{\paragraph}{
-    \@ifstar
-      \xxxParagraphStar
-      \xxxParagraphNoStar
-  }
-  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
-  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
-\fi
-\ifx\subparagraph\undefined\else
-  \let\oldsubparagraph\subparagraph
-  \renewcommand{\subparagraph}{
-    \@ifstar
-      \xxxSubParagraphStar
-      \xxxSubParagraphNoStar
-  }
-  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
-  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
-\fi
-\makeatother
+\usepackage{graphicx}
+\usepackage[style=base,figurename=Fig.,labelfont=bf,labelsep=period]{caption}
+\usepackage{subcaption}
+\usepackage{amsmath}
+%\usepackage{amsfonts}
+%\usepackage{amssymb}
+%\usepackage{amsbsy}
+\usepackage{newtxtext,newtxmath}
+\usepackage[colorlinks=true,citecolor=red,linkcolor=black]{hyperref}
+
+%code-highlighting
 
 \usepackage{color}
 \usepackage{fancyvrb}
@@ -104,150 +64,48 @@
 \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
 \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
 
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
-\usepackage{calc} % for calculating minipage widths
-% Correct order of tables after \paragraph or \subparagraph
-\usepackage{etoolbox}
-\makeatletter
-\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
-\makeatother
-% Allow footnotes in longtable head/foot
-\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
-\makesavenoteenv{longtable}
+% Graphics
 \usepackage{graphicx}
 \makeatletter
-\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
-\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
-\makeatother
-% Scale images if necessary, so that they will not overflow the page
-% margins by default, and it is still possible to overwrite the defaults
-% using explicit options in \includegraphics[width, height, ...]{}
-\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
-% Set default figure placement to htbp
-\makeatletter
-\def\fps@figure{htbp}
-\makeatother
-% definitions for citeproc citations
-\NewDocumentCommand\citeproctext{}{}
-\NewDocumentCommand\citeproc{mm}{%
-  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
-\makeatletter
- % allow citations to break across lines
- \let\@cite@ofmt\@firstofone
- % avoid brackets around text for \cite:
- \def\@biblabel#1{}
- \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
-\makeatother
-\newlength{\cslhangindent}
-\setlength{\cslhangindent}{1.5em}
-\newlength{\csllabelwidth}
-\setlength{\csllabelwidth}{3em}
-\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
- {\begin{list}{}{%
-  \setlength{\itemindent}{0pt}
-  \setlength{\leftmargin}{0pt}
-  \setlength{\parsep}{0pt}
-  % turn on hanging indent if param 1 is 1
-  \ifodd #1
-   \setlength{\leftmargin}{\cslhangindent}
-   \setlength{\itemindent}{-1\cslhangindent}
-  \fi
-  % set entry spacing
-  \setlength{\itemsep}{#2\baselineskip}}}
- {\end{list}}
-\usepackage{calc}
-\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
-\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
-\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
-\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
-
-\usepackage[figurename=Fig.,labelfont=bf,labelsep=period]{caption}
-\usepackage{newtxtext,newtxmath}
-\makeatletter
-\@ifpackageloaded{caption}{}{\usepackage{caption}}
-\AtBeginDocument{%
-\ifdefined\contentsname
-  \renewcommand*\contentsname{Table of contents}
-\else
-  \newcommand\contentsname{Table of contents}
-\fi
-\ifdefined\listfigurename
-  \renewcommand*\listfigurename{List of Figures}
-\else
-  \newcommand\listfigurename{List of Figures}
-\fi
-\ifdefined\listtablename
-  \renewcommand*\listtablename{List of Tables}
-\else
-  \newcommand\listtablename{List of Tables}
-\fi
-\ifdefined\figurename
-  \renewcommand*\figurename{\textbf{Fig.}}
-\else
-  \newcommand\figurename{\textbf{Fig.}}
-\fi
-\ifdefined\tablename
-  \renewcommand*\tablename{\textbf{Table}}
-\else
-  \newcommand\tablename{\textbf{Table}}
-\fi
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+	\sbox\pandoc@box{#1}%
+	\Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+	\Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+	\ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+	\ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+	\else\usebox{\pandoc@box}%
+	\fi%
 }
-\@ifpackageloaded{float}{}{\usepackage{float}}
-\floatstyle{ruled}
-\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
-\floatname{codelisting}{Listing}
-\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
-\captionsetup{labelsep=period}
-\makeatother
-\makeatletter
-\makeatother
-\makeatletter
-\@ifpackageloaded{caption}{}{\usepackage{caption}}
-\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
-\makeatother
 
-\ifLuaTeX
-  \usepackage{selnolig}  % disable illegal ligatures
-\fi
-\usepackage{bookmark}
+% Tightlist for pandoc use
+\providecommand{\tightlist}{%
+	\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+% Please add the first author's last name here for the footer:
+\NameTag{Author1, \today}
+% Note that this is not displayed if the NoPageNumbers option is used
+% in the documentclass declaration.
+%
+\begin{document}
 
-\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\urlstyle{same} % disable monospaced font for URLs
-\hypersetup{
-  pdftitle={Template for Preparing Your Submission to the American Society Of Civil Engineers (ASCE)},
-  pdfauthor={Author One, S.M. ASCE; Author Two, M. ASCE; Author three, A.M. ASCE},
-  pdfkeywords={template, quarto, asce},
-  colorlinks=true,
-  linkcolor={NavyBlue},
-  filecolor={Maroon},
-  citecolor={NavyBlue},
-  urlcolor={NavyBlue},
-  pdfcreator={LaTeX via pandoc}}
-
-
+% Title
 \title{Template for Preparing Your Submission to the American Society Of
 Civil Engineers (ASCE)}
-\author[1]{Author One, S.M. ASCE}%
-\affil[1]{
-	Graduate Research Associate, First affiliation address; 
-	Email: author.one@email.com
-	}
-\author[2]{Author Two, M. ASCE}%
-\affil[2]{
-	Assistant Professor, Second affiliation address; 
-	Email: author.two@email.com
-	}
-\author[3*]{Author three, A.M. ASCE}%
-\affil[3*]{
-	Associate Professor, Third affiliation address; 
-	Email: author.three@email.com
-	; Corresponding author}
 
-\NameTag{Author1, \today}
-\begin{document}
+% Author
+\author[1]{Author One, S.M. ASCE}%
+\affil[1]{Graduate Research Associate, First affiliation
+address; Email: author.one@email.com}
+\author[2]{Author Two, M. ASCE}%
+\affil[2]{Assistant Professor, Second affiliation
+address; Email: author.two@email.com}
+\author[3*]{Author three, A.M. ASCE}%
+\affil[3*]{Associate Professor, Third affiliation
+address; Email: author.three@email.com; Corresponding author}
+
 \maketitle
 
+% Abstract
 \begin{abstract}
 	The abstract should be a single paragraph (150-175 words long) written
 in plain language and include a summary of the key conclusions of the
@@ -261,26 +119,18 @@ during an online search. Mathematics and references are not permitted in
 the abstract and will be removed by the copyeditors.
 \end{abstract}
 
+% Keywords
 \KeyWords{template, quarto, asce}
-\par
-\vspace{1em}
 
 
 \section{Introduction}\label{introduction}
 
-This template and class file ``\texttt{asce-quarto.cls}'', based on
-Matthew R. Kuhn's ``\texttt{ascelike-new.cls}'',produce manuscripts that
-comply with the guidelines of the American Society of Civil Engineers
-(ASCE). The original ``\texttt{ascelike-new.cls}'' class has been
+This \texttt{Quarto} template produces manuscripts that comply with the
+guidelines of the American Society of Civil Engineers (ASCE). It is
+based on the original ``\texttt{ascelike-new.cls}'' class that has been
 produced by \href{https://www.overleaf.com}{Overleaf} in conjunction
 with the ``\texttt{ascelike-new.bst}'' citation style developed by
 Matthew R. Kuhn.
-
-The ``\texttt{asce-quarto.cls}'' differs from
-``\texttt{ascelike-new.cls}'' in that, the citation and bibliography
-related contents in the latter have been removed. Citation and
-bibliography styles are now handled using citation language style
-``\texttt{ascelike.cls}'' with Pandoc's \texttt{citproc} via Quarto.
 
 This template provides guidance on how to prepare your manuscript
 according to the ASCE requirements, including details on how to use
@@ -464,7 +314,7 @@ entire manuscript, including Appendixes. Equations should be in the body
 of a manuscript; complex equations in tables and figures are to be
 avoided, and numbered equations are never permitted in figures and
 tables. Here is an example of a displayed equation
-(Eq.~\ref{eq-Einstein})
+(Equation~\ref{eq-Einstein})
 
 \begin{equation}\phantomsection\label{eq-Einstein}{
 E = m c^{2}
@@ -534,17 +384,17 @@ capitalize only the first letter of subsubsection headings.
 \section{Figures and Tables}\label{figures-and-tables}
 
 This template includes two examples of figure
-(Fig.~\ref{fig-fill-between}, Fig.~\ref{fig-asce-logo}) and a table
-(Table~\ref{tbl-assembly}). Fig.~\ref{fig-fill-between} is a computed
+(Figure~\ref{fig-fill-between}, Figure~\ref{fig-asce-logo}) and a table
+(Table \ref{tbl-assembly}). Figure~\ref{fig-fill-between} is a computed
 figure with python. It has a caption with no more information than the
 figure itself, a very poor practice indeed. A reference here
-(\citeproc{ref-Stahl:2004a}{Stahl et al. 2004}).
+\citep{Stahl:2004a}.
 
 \begin{figure}
 
 \centering{
 
-\includegraphics{asce-template_files/figure-pdf/fig-fill-between-output-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{asce-template_files/figure-pdf/fig-fill-between-output-1.pdf}}
 
 }
 
@@ -552,7 +402,7 @@ figure itself, a very poor practice indeed. A reference here
 
 \end{figure}%
 
-Fig.~\ref{fig-asce-logo} is a figure of \texttt{pdf} format.
+Figure~\ref{fig-asce-logo} is a figure of \texttt{pdf} format.
 
 \subsection{Figure Captions}\label{figure-captions}
 
@@ -570,7 +420,7 @@ be cited sequentially in the text.
 
 \centering{
 
-\includegraphics{./img/asce-logo.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{./img/asce-logo.pdf}}
 
 }
 
@@ -616,37 +466,45 @@ The following is a guide to preparing tables as part of your submission
   Tables should not be submitted in multiple parts (Table 1a, 1b, etc.).
   Tables with multiple parts should either be combined into one table or
   split into separate tables.
+\item
+  In \textbf{Quarto}, it is suggested to use raw
+  \texttt{\textbackslash{}LaTex} code blocks to construct your table.
+  Use \texttt{\textbackslash{}lable\{tbl-xx\}} format to label your
+  table and cite it using \texttt{Table\ \textbackslash{}ref\{tbl-xx\}}
+  in the text. For \texttt{html} formats, use markdown table format in a
+  conditional div: \texttt{.content-visible\ when-format="html"}.
 \end{itemize}
 
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.6000}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.4000}}@{}}
-\caption{An example table}\label{tbl-assembly}\tabularnewline
-\toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-Assembly Attribute (1)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Values (2)
-\end{minipage} \\
-\midrule\noalign{}
-\endfirsthead
-\toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-Assembly Attribute (1)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Values (2)
-\end{minipage} \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
+\begin{table}
+
+\caption{\label{tbl-assembly}An example table}
+
+\centering{
+
+\centering
+\small
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{l l}
+\hline\hline
+\multicolumn{1}{c}{Assembly Attribute} &
+\multicolumn{1}{c}{Values} \\
+\multicolumn{1}{c}{(1)} &
+\multicolumn{1}{c}{(2)} \\
+\hline
 Number of particles & 4008 \\
-Particle sizes & Multiple \\
-Particle size range & \(0.45D_{50}^{\:\ast}\) to \(1.40D_{50}\) \\
-Initial void ratio, \(e_{\mathrm{init}}\) & \(0.179\) \\
-Assembly size & \(54D_{50} \times 54D_{50} \times 54D_{50}\) \\
-\(\ast\) \(D_{50}\) represents the median particle diameter & \\
-\end{longtable}
+Particle sizes & Multiple  \\
+Particle size range & $0.45D_{50}^{\:\ast}$ to $1.40D_{50}$ \\
+Initial void ratio, $e_{\mathrm{init}}$ & $0.179$ \\
+Assembly size & $54D_{50} \times 54D_{50} \times 54D_{50}$ \\
+\hline
+\multicolumn{2}{l}{$\ast$ $D_{50}$ represents the median particle diameter} \\
+\hline\hline
+\end{tabular}
+\normalsize
+
+}
+
+\end{table}%
 
 \section{Figure, Table and Text
 Permissions}\label{figure-table-and-text-permissions}
@@ -739,7 +597,7 @@ must be cited in the text.
 The citation options are available at
 \href{https://quarto.org/docs/authoring/citations.html}{Quarto website}.
 For example, \texttt{{[}-@Ireland:1954a{]}} produces the year
-information, (\citeproc{ref-Ireland:1954a}{1954}), only.
+information, \citeyearpar{Ireland:1954a}, only.
 
 The bibliographic data base \texttt{ascexmpl-new.bib} gives examples of
 bibliographic entries for different document types. These entries are
@@ -750,76 +608,59 @@ the \texttt{asce.csl} style for the following entries:
 
 \begin{itemize}
 \item
-  a book (\citeproc{ref-Goossens:1994a}{Goossens et al. 1994}),
+  a book \citep{Goossens:1994a},
 \item
-  an anonymous book (\citeproc{ref-Moody:1988a}{\emph{Moody's municipal
-  \& government manual} 1988}),
+  an anonymous book \citep{Moody:1988a},
 \item
-  an anonymous report using \texttt{@MANUAL}
-  (\citeproc{ref-FHWA:1991a}{\emph{Evaluating scour at bridges} 1991}),
+  an anonymous report using \texttt{@MANUAL} \citep{FHWA:1991a},
 \item
-  a journal article (\citeproc{ref-Pennoni:1992a}{Pennoni 1992};
-  \citeproc{ref-Stahl:2004a}{Stahl et al. 2004}),
+  a journal article \citep{Stahl:2004a, Pennoni:1992a},
 \item
-  a journal article in press (\citeproc{ref-Dasgupta:2008a}{Dasgupta
-  2008}),
+  a journal article in press \citep{Dasgupta:2008a},
 \item
   an article in an edited book using \texttt{@INCOLLECTION}
-  (\citeproc{ref-Zadeh:1981a}{Zadeh 1981}),
+  \citep{Zadeh:1981a},
 \item
-  a building code using \texttt{@MANUAL}
-  (\citeproc{ref-ICBO:1988a}{\emph{Uniform building code} 1988}),
+  a building code using \texttt{@MANUAL} \citep{ICBO:1988a},
 \item
-  a discussion of an \texttt{@ARTICLE}
-  (\citeproc{ref-Vesilind:1992a}{Vesilind 1992}),
+  a discussion of an \texttt{@ARTICLE} \citep{Vesilind:1992a},
 \item
   a masters thesis using \texttt{@MASTERSTHESIS}
-  (\citeproc{ref-Sotiropulos:1991a}{Sotiropulos 1991}),
+  \citep{Sotiropulos:1991a},
 \item
-  a doctoral thesis using \texttt{@PHDTHESIS}
-  (\citeproc{ref-Chang:1987a}{Chang 1987}),
+  a doctoral thesis using \texttt{@PHDTHESIS} \citep{Chang:1987a},
 \item
-  a paper in a foreign journal (\citeproc{ref-Ireland:1954a}{Ireland
-  1954}),
+  a paper in a foreign journal \citep{Ireland:1954a},
 \item
   a paper in a proceedings using \texttt{@INPROCEEDINGS}
-  (\citeproc{ref-Eshenaur:1991a}{Eshenaur et al. 1991};
-  \citeproc{ref-Garrett:2003a}{Garrett 2003}),
+  \citep{Eshenaur:1991a, Garrett:2003a},
 \item
-  a standard using \texttt{@INCOLLECTION}
-  (\citeproc{ref-ASTM:1991a}{ASTM 1991}),
+  a standard using \texttt{@INCOLLECTION} \citep{ASTM:1991a},
 \item
-  a translated book (\citeproc{ref-Melan:1913a}{Melan 1913}),
+  a translated book \citep{Melan:1913a},
 \item
-  a two-part paper (\citeproc{ref-Frater:1992a}{Frater and Packer
-  1992a}; \citeproc{ref-Frater:1992b}{b}),
+  a two-part paper \citep{Frater:1992a, Frater:1992b},
 \item
-  a university report using \texttt{@TECHREPORT}
-  (\citeproc{ref-Duan:1990a}{Duan et al. 1990}),
+  a university report using \texttt{@TECHREPORT} \citep{Duan:1990a},
 \item
   an untitled item in the Federal Register using \texttt{@MANUAL}
-  (\citeproc{ref-FR:1968a}{\emph{Federal register} 1988}),
+  \citep{FR:1968a},
 \item
-  works in a foreign language (\citeproc{ref-Duvant:1972a}{Duvant and
-  Lions 1972}; \citeproc{ref-Reiffenstuhl:1982a}{Reiffenstuhl 1982}),
+  works in a foreign language \citep{Duvant:1972a, Reiffenstuhl:1982a},
 \item
-  software using \texttt{@MANUAL}
-  (\citeproc{ref-Lotus:1985a}{\emph{Lotus 1-2-3 reference manual;
-  release 2.01} 1985}),
+  software using \texttt{@MANUAL} \citep{Lotus:1985a},
 \item
   two works by the same author in the same year
-  (\citeproc{ref-Gaspar:2001b}{Gaspar and Koenders 2001a};
-  \citeproc{ref-Gaspar:2001a}{b}), and
+  \citep{Gaspar:2001b, Gaspar:2001a}, and
 \item
   two works by three authors in the same year that only share the first
-  two authors (\citeproc{ref-Huang2009a}{Huang et al. 2009a};
-  \citeproc{ref-Huang2009b}{b}).
+  two authors \citep{Huang2009a, Huang2009b}.
 \end{itemize}
 
 ASCE has added two types of bibliographic entries: webpages and CD-ROMs.
 A webpage can be formated using the \texttt{@MISC} entry category, as
-with the item (\citeproc{ref-Burka:1993a}{Burka 1993}) produced with the
-following \texttt{*.bib} entry:
+with the item \citep{Burka:1993a} produced with the following
+\texttt{*.bib} entry:
 
 \begin{verbatim}
     @MISC{Burka:1993a,
@@ -838,14 +679,13 @@ material was downloaded and the use of a new ``\texttt{url}'' field. The
 entry types (i.e., \texttt{@BOOK}, \texttt{@INPROCEEDINGS},
 \texttt{@MANUAL}, \texttt{@MASTERSTHESIS}, \texttt{@PHDTHESIS}, and
 \texttt{@TECHREPORT}): for example, in the entry type
-\texttt{@PHDTHESIS} for (\citeproc{ref-Wichtmann:2005a}{Wichtmann
-2005}).
+\texttt{@PHDTHESIS} for \citep{Wichtmann:2005a}.
 
 A CD-ROM can be referenced when using the \texttt{@BOOK},
 \texttt{@INBOOK}, \texttt{@INCOLLECTION}, or \texttt{@INPROCEEDINGS}
-categories, as in the entry (\citeproc{ref-Liggett:1998a}{Liggett and
-Caughey 1998}). The field ``\texttt{howpublished}'' is used to designate
-the medium in the \texttt{.bib} file:
+categories, as in the entry \citep{Liggett:1998a}. The field
+``\texttt{howpublished}'' is used to designate the medium in the
+\texttt{.bib} file:
 
 \begin{verbatim}
     howpublished = {CD-ROM},
@@ -857,15 +697,11 @@ the medium in the \texttt{.bib} file:
 
 \emph{The following symbols are used in this paper:}
 
-\begin{longtable}[]{@{}ll@{}}
-\toprule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-\(D\) & pile diameter (m); \\
-\(R\) & distance (m); and \\
-\(C_{\mathrm{Oh\;no!}}\) & fudge factor. \\
-\end{longtable}
+\begin{tabular}{r  @{\hspace{1em}=\hspace{1em}}  l}
+$D$                    & pile diameter (m); \\
+$R$                    & distance (m);      and\\
+$C_{\mathrm{Oh\;no!}}$ & fudge factor.
+\end{tabular}
 
 \section{Title block, publication types, and
 options}\label{sec-app-options}
@@ -893,6 +729,7 @@ For example, to generate this example PDF file, the following
 \AttributeTok{    }\FunctionTok{affiliations}\KeywordTok{:}\AttributeTok{ Associate Professor, Third affiliation address}
 \AttributeTok{    }\FunctionTok{email}\KeywordTok{:}\AttributeTok{ author.three@email.com}
 \AttributeTok{    }\FunctionTok{corresponding}\KeywordTok{:}\AttributeTok{ }\CharTok{true}
+\FunctionTok{code{-}highlighter}\KeywordTok{:}\AttributeTok{ }\CharTok{true}
 \FunctionTok{abstract}\KeywordTok{: }\CharTok{|}
 \NormalTok{  The abstract should be a single paragraph (150{-}175 words long) written}
 \NormalTok{  in plain language and include a summary of the key conclusions of the}
@@ -914,6 +751,14 @@ For example, to generate this example PDF file, the following
 \AttributeTok{    }\FunctionTok{classoption}\KeywordTok{:}\AttributeTok{ }\KeywordTok{[}\AttributeTok{InsideFigs}\KeywordTok{,}\AttributeTok{ LineNumbers}\KeywordTok{]}
 \end{Highlighting}
 \end{Shaded}
+
+\subsection{\texorpdfstring{\texttt{code-highlighter}}{code-highlighter}}\label{code-highlighter}
+
+If set \texttt{true}, default \texttt{Quarto} code highlighting style
+will be used. This will create a lengthy block in the preamble. Most of
+the time, this is not needed. In this example, I set it as \texttt{true}
+to show the above code block. Delete this line in your \texttt{yaml}
+header to generate a cleaner \texttt{tex} file for submission.
 
 \subsection{Authors and affiliations}\label{authors-and-affiliations}
 
@@ -1011,159 +856,12 @@ Use \texttt{classoption} to specify the following options.
 \section*{References}\label{references}
 \addcontentsline{toc}{section}{References}
 
-\phantomsection\label{refs}
-\begin{CSLReferences}{1}{0}
-\bibitem[\citeproctext]{ref-ASTM:1991a}
-ASTM. 1991. {``Standard practice for the use of the international system
-of units ({ SI}) (the modernized metric system).''} \emph{E 380-91a}.
-Philadelphia, Pa.: ASTM.
+\renewcommand{\bibsection}{}
+\bibliography{references.bib}
 
-\bibitem[\citeproctext]{ref-Burka:1993a}
-Burka, L. P. 1993. {``\href{http://www.ccs.neu.edu}{A hypertext history
-of multi-user dimensions}.''} \emph{MUD history}.
-
-\bibitem[\citeproctext]{ref-Chang:1987a}
-Chang, T. C. 1987. {``\href{}{Network resource allocation using an
-expert system with fuzzy logic reasoning}.''} PhD thesis. Berkeley, CA:
-University of California.
-
-\bibitem[\citeproctext]{ref-Dasgupta:2008a}
-Dasgupta, G. 2008. {``Stiffness matrix from isoparametric closed form
-shape functions using exact integration.''} \emph{J. Aerosp. Eng.}
-
-\bibitem[\citeproctext]{ref-Duan:1990a}
-Duan, L., J. T. Loh, and W. F. Chen. 1990. \emph{\href{}{M-{P}-f-based
-analysis of dented tubular members}}. Struct. Engrg. Rep. No. West
-Lafayette, Ind.: School of Civ. Engrg., Purdue Univ.
-
-\bibitem[\citeproctext]{ref-Duvant:1972a}
-Duvant, G., and J. L. Lions. 1972. \emph{Les in{é}quations en
-m{é}chanique et en physique}. Paris, France: Dunod.
-
-\bibitem[\citeproctext]{ref-Eshenaur:1991a}
-Eshenaur, S. R., J. M. Kulicki, and D. R. Mertz. 1991. {``Retrofitting
-distortion-induced fatigue cracking of non-composite steel
-girder-floorbeam-stringer bridges.''} \emph{Proc., 8th annual int.
-Bridge conf.}, 380--388. Pittsburgh, Pa.: Engineers' Soc. of Western
-Pennsylvania.
-
-\bibitem[\citeproctext]{ref-FHWA:1991a}
-\emph{Evaluating scour at bridges}. 1991. Washington, D.C.: Federal
-Highway Administration (FHWA); Rep., Hydr. Engrg. Circular No. 18:
-FHWA-IP-90-017.
-
-\bibitem[\citeproctext]{ref-FR:1968a}
-\emph{Federal register}. 1988.
-
-\bibitem[\citeproctext]{ref-Frater:1992a}
-Frater, G. S., and J. A. Packer. 1992a. {``Weldment design for {RHS}
-truss connections. {I}: applications.''} \emph{J. Struct. Engrg.}, 118
-(10): 2784--2803. ASCE.
-
-\bibitem[\citeproctext]{ref-Frater:1992b}
-Frater, G. S., and J. A. Packer. 1992b. {``Weldment design for {RHS}
-truss connections. {II}: experimentation.''} \emph{J. Struct. Engrg.},
-118 (10): 2804--2820. ASCE.
-
-\bibitem[\citeproctext]{ref-Garrett:2003a}
-Garrett, D. L. 2003. {``Coupled analysis of floating production
-systems.''} \emph{Proc., int. Symp. On deep mooring systems}, 152--167.
-Reston, VA: ASCE; CD-ROM.
-
-\bibitem[\citeproctext]{ref-Gaspar:2001a}
-Gaspar, N., and M. A. Koenders. 2001b. {``Micromechanic formulation of
-macroscopic structures in a granular medium.''} \emph{J. Engrg. Mech.},
-127 (10): 987--993.
-
-\bibitem[\citeproctext]{ref-Gaspar:2001b}
-Gaspar, N., and M. A. Koenders. 2001a. {``Estimates of the shear modulus
-of a granular assembly using heterogeneous media techniques.''}
-\emph{Powders and grains 2001}, Y. Kishino, ed., 389--392. Lisse: A.A.
-Balkema.
-
-\bibitem[\citeproctext]{ref-Goossens:1994a}
-Goossens, M., F. Mittlebach, and A. Samarin. 1994. \emph{The
-LaTeX~companion}. Reading, Mass.: Addison--Wesley Pub. Co.
-
-\bibitem[\citeproctext]{ref-Huang2009a}
-Huang, Y., R. Bird, and M. Bell. 2009a. {``A comparative study of the
-emission by road maintenance works and the disrupted traffic using life
-cycle assessment and micro-simulation.''} \emph{Transportation Research
-Part D}, 14: 197--204.
-
-\bibitem[\citeproctext]{ref-Huang2009b}
-Huang, Y., R. Bird, and O. Hendrich. 2009b. {``Development of a life
-cycle assessment tool for construction and maintenance of asphalt
-pavements.''} \emph{Journal of Cleaner Production}, 17: 283--296.
-
-\bibitem[\citeproctext]{ref-Ireland:1954a}
-Ireland, H. O. 1954. {``Stability analysis of {C}ongress {S}treet open
-cut in {C}hicago.''} \emph{G{é}otechnique}, 4 (4): 163--168. London,
-England.
-
-\bibitem[\citeproctext]{ref-Liggett:1998a}
-Liggett, J. A., and D. A. Caughey. 1998. {``Fluid statics.''}
-\emph{Fluid mechanics}, 167--177. Reston, VA: CD-ROM; ASCE.
-
-\bibitem[\citeproctext]{ref-Lotus:1985a}
-\emph{Lotus 1-2-3 reference manual; release 2.01}. 1985. Cambridge,
-Mass.: Lotus Development Corp.
-
-\bibitem[\citeproctext]{ref-Melan:1913a}
-Melan, J. 1913. \emph{Theory of arches and suspension bridges}. Chicago,
-Ill: Myron C. Clark.
-
-\bibitem[\citeproctext]{ref-Moody:1988a}
-\emph{Moody's municipal \& government manual}. 1988. New York, N.Y.:
-Moody's Investors Service.
-
-\bibitem[\citeproctext]{ref-Pennoni:1992a}
-Pennoni, C. R. 1992. {``Visioning: The future of civil engineering.''}
-\emph{J. Profl. Issues in Engrg. Education and Practice}, 118 (3):
-221--233. ASCE.
-
-\bibitem[\citeproctext]{ref-Reiffenstuhl:1982a}
-Reiffenstuhl, H. 1982. {``Das vorspannen von bewehrung auf druck:
-Grundsaetzliches und anwendungsmoeglichkeiten {[}prestressing of
-reinforcing in compression: Fundamentals and application
-possibilities{]}.''} \emph{Beton-und Stahlbetonbau}, 77 (3): 69--73.
-Berlin, Germany.
-
-\bibitem[\citeproctext]{ref-Sotiropulos:1991a}
-Sotiropulos, S. N. 1991. {``\href{}{Static response of bridge
-superstructures made of fiber reinforced plastic}.''} M.\{S\}. thesis.
-Morgantown, WV: West Virginia Univ.
-
-\bibitem[\citeproctext]{ref-Stahl:2004a}
-Stahl, D. C., R. W. Wolfe, and M. Begel. 2004. {``Improved analysis of
-timber rivet connections.''} \emph{J. Struct. Eng.}, 130 (8):
-1272--1279.
-
-\bibitem[\citeproctext]{ref-ICBO:1988a}
-\emph{Uniform building code}. 1988. Whittier, Calif.: International
-Conference of Building Officials.
-
-\bibitem[\citeproctext]{ref-Vesilind:1992a}
-Vesilind, P. A. 1992. {``Discussion of {`{G}uidance for
-engineering-design-class lectures on ethics,'} by {R}ichard {H}.
-{M}c{C}uen.''} \emph{J. Profl. Issues in Engrg. Education and Practice},
-118 (2): 214--215. ASCE.
-
-\bibitem[\citeproctext]{ref-Wichtmann:2005a}
-Wichtmann, T. 2005.
-{``\href{https://www.rz.uni-karlsruhe.de/$/sim$gn97/}{Explicit
-accumulation model for non-cohesive soils under cyclic loading}.''} PhD
-thesis. Institute for Soil Mechanics; Foundation Engineering, Ruhr-Univ.
-Bochum, Germany.
-
-\bibitem[\citeproctext]{ref-Zadeh:1981a}
-Zadeh, L. A. 1981. {``Possibility theory and soft data analysis.''}
-\emph{Mathematical frontiers of the social and policy sciences}, L. Cobb
-and R. M. Thrall, eds., 69--129. Boulder, Colo.: Westview Press, Inc.
-
-\end{CSLReferences}
-
-
-
+%
+% Here's the list of references:
+%
+% \label{section:references}
 
 \end{document}
