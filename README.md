@@ -109,8 +109,7 @@ format:
     However, the caption will still be included in the `List of Tables`.  This will mess up the Table numbers and your first `longtable` will always be the Table 1 since it appears in the text.
     So a suggestions is, avoid using `longtable` if possible.
 
-
-## `code-highlighter` 
+## `code-highlighter`
 
 When set to true, Quarto’s default code highlighting style is included, which adds a lengthy block to the LaTeX preamble. In most cases, this is unnecessary.
 
