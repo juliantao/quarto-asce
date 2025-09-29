@@ -1,6 +1,6 @@
 title: American Society of Civil Engineers
 author: Julian Tao 
-version: 1.0.4
+version: 1.0.5
 contributes:
   format:
     common:
@@ -14,6 +14,14 @@ contributes:
       shortcodes:
         - "filters/shortcodes.lua"
         - "filters/words.lua"
+      crossref:
+        fig-prefix: Fig.
+        fig-title: "**Fig.**"
+        tbl-prefix: Table
+        tbl-title: "**Table**"
+        eq-prefix: Eq.
+        sec-prefix: Section
+        title-delim: '\.'
       knitr:
         opts_chunk:
           echo: false
@@ -46,11 +54,3 @@ contributes:
       number-sections: true
       theme: custom.scss
       csl: https://www.zotero.org/styles/american-society-of-civil-engineers
-      crossref:
-        fig-prefix: Fig.
-        fig-title: "**Fig.**"
-        tbl-prefix: Table
-        tbl-title: "**Table**"
-        eq-prefix: Eq.
-        sec-prefix: Section
-        title-delim: '\.'
